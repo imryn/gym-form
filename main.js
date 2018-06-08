@@ -34,9 +34,6 @@ function createKidForm(data,callback){
     }
 }
 
-createKidForm.error= function(msg){
-    document.querySelector(".success-message2").textContent = msg;
-}
 
 createParentUser.error = function(msg){
     document.querySelector(".success-message").textContent = msg;
@@ -50,13 +47,7 @@ function idcheck(idcheck,errorFunction){
     return true;
 }
 
-function kindercodecheck(kindercodecheck,errorFunction){
-    if(kindercodecheck.toString().length !=5){
-        errorFunction.error("Kindergarten code field must contain 5 digits");
-        return false;
-    }
-    return true;
-}
+
 
 function emailcheck(emailcheck,errorFunction){
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -73,37 +64,24 @@ function errorForUser(msg){
     document.querySelector(".success-message").textContent = msg;
 }
 
-function createParentUser(){
-    var parentData = getFormData("#registration-parent");
-    var kidData = getFormData("#registration-kid");
-    kidData['parentId'] = parentData['parentId'];
-    parentData['kidId'] = kidData['kidId'];
-    kidData['lastname'] = parentData['lastname'];
-    parentData['lastname'] = kidData['lastname'];
-    var checkkindercode = kindercodecheck(parentData['kindergartenid'],createParentUser);
-    var checkKid = idcheck(kidData['kidId'],createKidForm);
-    var checkParent = idcheck(parentData['parentId'],createParentUser);
-    var checkEmailParent = emailcheck(parentData['email'],createParentUser);
-    if(!checkkindercode || !checkKid || !checkParent || !checkEmailParent){
+function createUser(){
+    var Data = getFormData("#registration-form");
+    var checkid = idcheck(Data['userId'],createUser);
+    var checkEmail = emailcheck(Data['email'],createUser);
+    if(! !checkid || !checkEmail){
         return;
     }
-    createKidForm(kidData,function(response){
-        if(response.success){
-            parentData['route'] = 'create_user';
-            httpPost("/Sadna/server/api.php",parentData,function(_response){
+    
+    Data['route'] = 'create_user';
+            httpPost("/tihnot_zad_sharat/gym form/server/api.php",Data,function(_response){
                 if(_response.success){
                     bootpopup.alert("Form was saved successfully !!","Success",function(){
-                        window.location.assign("/Sadna/index.php");
+                        window.location.assign("/tihnot_zad_sharat/gym form/index.php");
                     });
                 }
                 else{
                     errorForUser("One of the fields is wrong or already used");
                 }
-            })
-        }
-        else{
-            errorForUser("One of the fields is wrong or already used");
-        }
-    });
-}
+            });
+ }
 

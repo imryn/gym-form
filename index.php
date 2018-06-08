@@ -115,7 +115,7 @@
                     </div>
                 </div>
 
-            <button type="button" class="save-1 btn btn-primary" onClick="createParentUser()"> Save</button>   
+            <button type="button" class="save-1 btn btn-primary" onClick="createUser()"> Save</button>   
         </form> 
      </section>
 </div>
