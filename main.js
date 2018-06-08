@@ -22,20 +22,20 @@ function createTable(data){
     console.log(table)
 }
 
-function createKidForm(data,callback){
-    var date = new Date(data.bDate).getTime();
-    if(!isNaN(date)){
-        data.bDate = date;
-    }
+// function createKidForm(data,callback){
+//     var date = new Date(data.bDate).getTime();
+//     if(!isNaN(date)){
+//         data.bDate = date;
+//     }
 
-    if(idcheck(data['kidId'],createKidForm)){
-        data['route'] = 'create_kid';
-        httpPost("/Sadna/server/api.php",data,callback);
-    }
-}
+//     if(idcheck(data['kidId'],createKidForm)){
+//         data['route'] = 'create_kid';
+//         httpPost("/Sadna/server/api.php",data,callback);
+//     }
+// }
 
 
-createParentUser.error = function(msg){
+createUser.error = function(msg){
     document.querySelector(".success-message").textContent = msg;
 }
 
@@ -66,17 +66,17 @@ function errorForUser(msg){
 
 function createUser(){
     var Data = getFormData("#registration-form");
-    var checkid = idcheck(Data['userId'],createUser);
+    var checkid = idcheck(Data['userid'],createUser);
     var checkEmail = emailcheck(Data['email'],createUser);
-    if(! !checkid || !checkEmail){
+    if(!checkid || !checkEmail){
         return;
     }
     
     Data['route'] = 'create_user';
-            httpPost("/tihnot_zad_sharat/gym form/server/api.php",Data,function(_response){
+            httpPost("/tihnot_zad_sharat/gym-form/server/api.php",Data,function(_response){
                 if(_response.success){
                     bootpopup.alert("Form was saved successfully !!","Success",function(){
-                        window.location.assign("/tihnot_zad_sharat/gym form/index.php");
+                        window.location.assign("/tihnot_zad_sharat/gym-form/index.php");
                     });
                 }
                 else{

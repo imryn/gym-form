@@ -6,7 +6,6 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
                 <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-                <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
                 <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
                 <link rel="stylesheet" type="text/css" href="css/style.css">
                 <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
@@ -35,11 +34,11 @@
                     <div class="col span-1-of-2 box">
                         <div class="registration-info">
                             <label class="gym-label"> <span> * </span> Choose Your Gender </label> <br>
-                                        <select name="gender" size="1" id="gender-select" > 
+                                    <select name="gender" size="1" id="gender-select" > 
                                                 <option value="empty" selected> - Select - </option>
                                                 <option value="man"> Man  </option>
                                                 <option value="woman"> Woman </option>
-                                        </select> 
+                                    </select> 
                         </div>
                     </div>
                 </div>
@@ -84,7 +83,7 @@
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label for="address"> City </label> <br>
-                            <input name="addressuser" type="text"/> 
+                            <input name="city" type="text"/> 
                         </div>
                     </div>
                     <div class="col span-1-of-3 box">
@@ -104,7 +103,7 @@
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label for="hight" class="gym-label"> <span> * </span> Height: </label> <br>
-                            <input name="hight" type="text" required/>
+                            <input name="height" type="text" required/>
                         </div> 
                     </div>
                     <div class="col span-1-of-3 box">
