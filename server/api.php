@@ -21,16 +21,12 @@
        else if($method == "GET" &&  isSet($_GET['route']) ){
            switch ($_GET['route']) {
                 case "signout":
-                 if(isset( $_SESSION['parentId'])){
+                 if(isset( $_SESSION['userid'])){
                     session_destroy();
-                    header("Location: /Sadna/login_page.php?usertype=parent");
+                    header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
                  }
-                 else{
-                    session_destroy();
-                    header("Location: /Sadna/login_page.php?usertype=crew");
-                 }
-                 setcookie("loginType", "", time()-3600,"/"); 
                  break;
+
             }
        }
        else{
