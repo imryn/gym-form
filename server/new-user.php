@@ -56,7 +56,7 @@
          public function login(){
             if( isSet($_SESSION['token']) && isSet($_POST['token']) && $_SESSION['token'] == $_POST['token']){
                 $this->allowSpecialCharacters($_POST);
-                $sql = "SELECT userId FROM users WHERE userId='{$_POST['userid']}' AND password ='{$_POST['password']}'";
+                $sql = "SELECT userid FROM users WHERE userid='{$_POST['userid']}' AND password ='{$_POST['password']}'";
                 $result = $this->db->query($sql);
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
