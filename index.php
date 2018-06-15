@@ -26,8 +26,15 @@
         </header>
     <div class="container">
       <section id="registration-form">
-            <form>
+            <form action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
                 <h1> Registration  </h1>
+                <div>
+                    <?php 
+                    if( isSet($_GET['error-message']) ){
+                        echo $_GET['error-message'];
+                    }
+                     ?>
+                </div>
                 <p class="describe-info"> Please fill in your personal details </p>
                 <p class="success-message"></p>
                 <div class="row gym-form">
@@ -113,14 +120,11 @@
                         </div> 
                     </div>
                 </div>
-
-            <button type="button" class="save-1 btn btn-primary" onClick="createUser()"> Save</button>   
+            <input type="hidden" name="route" value="create_user">
+            <button type="submit" class="save-1 btn btn-primary"> Save</button>   
         </form> 
      </section>
-</div>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
-       
+</div>   
 
             <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">

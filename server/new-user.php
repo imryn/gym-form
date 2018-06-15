@@ -25,13 +25,46 @@
         public function createUser(){
             
             $this->allowSpecialCharacters($_POST);
-                 
-            if(!empty($_POST['gender']) && !empty($_POST['agepref']) && !empty($_POST['firstname']) &&
-            !empty($_POST['lastname']) && !empty($_POST['userid']) && !empty($_POST['password']) && 
-            !empty($_POST['city']) && !empty($_POST['email']) && !empty($_POST['phonenumber']) &&
-            !empty($_POST['height']) && !empty($_POST['weight']) ){
+            
+            $error = "";
+            if(empty($_POST['gender'])){
+                $error = "No gender was selected";
+            }
+            else if(empty($_POST['agepref'])){
+                $error = "No age prefrence was selected";
+            }
+            else if (empty($_POST['firstname'])){
+                $error = "No first name was entered"; 
+            }
+            else if(empty($_POST['lastname'])){
+                $error = "No last name was entered"; 
+            }
+            else if(empty($_POST['userid']) && strlen($_POST['userid'])==9){
+                $error = "The ID that was entered is invalid"; 
+            }
+            else if(empty($_POST['password'])){
+                $error = "No password was entered"; 
+            }
+            else if(empty($_POST['city'])){
+                $error = "No city was entered";
+            }
+            else if(empty($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+                $error = "The email is already used or invalid";
+            }
+            else if(empty($_POST['phonenumber'])){
+                $error = "The phonenumber is invalid";
+            }
+            else if(empty($_POST['height'])){
+                $error = "You can't send the form without sending height";
+            }
+            else if(empty($_POST['weight'])){
+                $error = "You can't send the form without sending weight";
+            }
+            if(!empty($error)){
+                header("Location: /tihnot_zad_sharat/gym-form/index.php?error-message=$error");
+            }
 
-              
+            else{
 
                 $values = "'{$_POST['gender']}','{$_POST['agepref']}','{$_POST['firstname']}','{$_POST['lastname']}',{$_POST['userid']},
                 '{$_POST['password']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phonenumber']}',{$_POST['height']},{$_POST['weight']}";
@@ -42,10 +75,11 @@
                 $result =$this->db->query($sql);
                 if($result){
                     $id = $this->db->insert_id;
-                     echo json_encode((object) [
-                        'id' => $id,
-                         'success'=>true
-                    ]);
+                    header("Location: /tihnot_zad_sharat/gym-form/index.php?error-message=The form was saved");
+                    //  echo json_encode((object) [
+                    //     'id' => $id,
+                    //      'success'=>true
+                    // ]);
                 }
                
             } 

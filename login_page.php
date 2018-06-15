@@ -61,8 +61,6 @@
         </div>
      </form>     
    </section>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
     
 </body>
 
