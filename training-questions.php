@@ -66,10 +66,10 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                         <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times are you trianing in a month? </label>
-                            <p> <input type="radio" name="training_frequency"> 1-3 times </p>
-                            <p> <input type="radio" name="training_frequency"> 4-7 times </p>
-                            <p> <input type="radio" name="training_frequency"> 8-11 times </p>
-                            <p> <input type="radio" name="training_frequency"> 11+ </p>
+                            <p> <input type="radio" name="training_frequency" value="1-3 times"> 1-3 times </p>
+                            <p> <input type="radio" name="training_frequency" value="4-7 times"> 4-7 times </p>
+                            <p> <input type="radio" name="training_frequency" value="8-11 times"> 8-11 times </p>
+                            <p> <input type="radio" name="training_frequency" value="11+"> 11+ </p>
                         </div>
                     </div>
                 </div>
@@ -77,11 +77,11 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                         <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is your favorite time at the day to train? </label>
-                            <p> <input type="radio" name="training_favorite_time"> Early morning </p>
-                            <p> <input type="radio" name="training_favorite_time"> Morning </p>
-                            <p> <input type="radio" name="training_favorite_time"> Noon </p>
-                            <p> <input type="radio" name="training_favorite_time"> Afternoon </p>
-                            <p> <input type="radio" name="training_favorite_time"> Night </p>
+                            <p> <input type="radio" name="training_favorite_time" value="early morning"> Early morning </p>
+                            <p> <input type="radio" name="training_favorite_time" value="morning"> Morning </p>
+                            <p> <input type="radio" name="training_favorite_time" value="noon"> Noon </p>
+                            <p> <input type="radio" name="training_favorite_time" value="afternoon"> Afternoon </p>
+                            <p> <input type="radio" name="training_favorite_time" value="night"> Night </p>
                         </div>
                     </div>
                 </div>
@@ -101,11 +101,11 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                         <label for="trainningmanner" class="gym-label"> <span> * </span> How do you do the workout? </label>
-                            <p> <input type="radio" name="trainning_manner"> Alone </p>
-                            <p> <input type="radio" name="trainning_manner"> With personal trainer </p>
-                            <p> <input type="radio" name="trainning_manner"> With a friend </p>
-                            <p> <input type="radio" name="trainning_manner"> In a Studio </p>
-                            <p> <input type="radio" name="trainning_manner"> In a group </p>
+                            <p> <input type="radio" name="trainning_manner" value="alone"> Alone </p>
+                            <p> <input type="radio" name="trainning_manner" value="with personal trainer"> With personal trainer </p>
+                            <p> <input type="radio" name="trainning_manner" value="with a friend"> With a friend </p>
+                            <p> <input type="radio" name="trainning_manner" value="in a studio"> In a Studio </p>
+                            <p> <input type="radio" name="trainning_manner" value="in a group"> In a group </p>
                         </div>
                     </div>
                 </div>
@@ -113,9 +113,9 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                         <label for="name" class="gym-label"> <span> * </span> Does the workout cost you money? </label>
-                            <p> <input type="radio" name="trainning_cost"> Yes </p>
-                            <p> <input type="radio" name="trainning_cost"> No </p>
-                            <p> <input type="radio" name="trainning_cost"> Depsends on the kind of trainning </p>
+                            <p> <input type="radio" name="trainning_cost" value="yes"> Yes </p>
+                            <p> <input type="radio" name="trainning_cost" value="no"> No </p>
+                            <p> <input type="radio" name="trainning_cost" value="depends on the kind of trainning"> Depsends on the kind of trainning </p>
                         </div>
                     </div>
                 </div>
