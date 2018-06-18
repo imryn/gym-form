@@ -27,96 +27,100 @@
         </header>
 
     <div class="container">
-      <section id="gym-recommendation">
-            <form>
-                <h1> Recommendation For Gym Training  </h1>
-                <p class="describe-info"> Please fill the form to get your gym training suggestion </p>
-                <p class="success-message"></p>
+      <section id="gym-questions">
+            <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
+                <h1> Questions For Gym Training  </h1>
+                <div>
+                    <?php 
+                    if( isSet($_GET['error-message']) ){
+                        echo $_GET['error-message'];
+                    }
+                     ?>
+                </div>
+                <p class="describe-info"> Please fill the form to get your training suggestion </p>
                 <div class="row gym-form">
-                    <div class="col span-1-of-2 box">
+                    <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label class="gym-label"> <span> * </span> Choose Your Gender </label> <br>
-                                        <select name="gender" size="1" id="gender-select" > 
-                                                <option value="empty" selected> - Select - </option>
-                                                <option value="man"> Man  </option>
-                                                <option value="woman"> Woman </option>
-                                        </select> 
+                            <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport are you mostly do?  </label>
+                            <p> <input type="checkbox" name="bicycle"> Driving on bicycle </p>
+                            <p> <input type="checkbox" name="gymsport"> Going to the gym </p>
+                            <p> <input type="checkbox" name="martialarts"> Martial arts </p>
+                            <p> <input type="checkbox" name="game"> Playing football, basketball, handball etc. </p>             
+                            <p> <input type="checkbox" name="running"> Running </p>
+                            <p> <input type="checkbox" name="swimming"> Swimming </p>     
+                        </div>
+                    </div>
+                </div>
+                <p class="describe-info"> Please answer this question only if you are going to the gym </p>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">        
+                            <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
+                            <p> <input type="checkbox" name="swimming"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
+                            <p> <input type="checkbox" name="unaerobic_exercises"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
+                            <p> <input type="checkbox" name="gymsport"> Both </p>
+                        </div>
+                    </div>checkbox
+                </div>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">
+                        <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times are you trianing in a month? </label>
+                            <p> <input type="radio" name="training_frequency"> 1-3 times </p>
+                            <p> <input type="radio" name="training_frequency"> 4-7 times </p>
+                            <p> <input type="radio" name="training_frequency"> 8-11 times </p>
+                            <p> <input type="radio" name="training_frequency"> 11+ </p>
                         </div>
                     </div>
                 </div>
                 <div class="row gym-form">
-                    <div class="col span-1-of-2 box">
+                    <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="age" class="gym-label"> <span> * </span> Choose Your Age: </label>
-                            <p> <input type="radio" name="agepref" value="20-24"> 20-26 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 27-33 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 34-40 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 40+ </p>                  
+                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is your favorite time at the day to train? </label>
+                            <p> <input type="radio" name="training_favorite_time"> Early morning </p>
+                            <p> <input type="radio" name="training_favorite_time"> Morning </p>
+                            <p> <input type="radio" name="training_favorite_time"> Noon </p>
+                            <p> <input type="radio" name="training_favorite_time"> Afternoon </p>
+                            <p> <input type="radio" name="training_favorite_time"> Night </p>
                         </div>
                     </div>
                 </div>
                 <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
+                    <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> First Name: </label>
-                            <input name="firstname" type="text" required/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> Last Name: </label>
-                            <input name="lastname" type="text" required/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="id" class="gym-label"> <span> * </span> ID: </label> <br>
-                            <input name="id" type="text" required/>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="password" class="gym-label"> <span> * </span> Password: </label> <br>
-                            <input name="password" type="password" id="password" required/>
-                        </div> 
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="address"> City </label> <br>
-                            <input name="addressuser" type="text"/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="email" class="gym-label"> <span> * </span> Email: </label> <br>
-                            <input name="email" type="email" required/>
+                        <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
+                            <p> <input type="checkbox" name="balance"> Balance </p>
+                            <p> <input type="checkbox" name="cardio"> Cardio </p>
+                            <p> <input type="checkbox" name="shaping_and_toning"> Shaping and toning </p>
+                            <p> <input type="checkbox" name="weight loss"> Weight loss </p>
+                            <p> <input type="checkbox" name="goal"> All </p>
                         </div>
                     </div>
                 </div>
                 <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
+                    <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="address"> City </label> <br>
-                            <input name="addressuser" type="text"/> 
+                        <label for="trainningmanner" class="gym-label"> <span> * </span> How do you do the workout? </label>
+                            <p> <input type="radio" name="trainning_manner"> Alone </p>
+                            <p> <input type="radio" name="trainning_manner"> With personal trainer </p>
+                            <p> <input type="radio" name="trainning_manner"> With a friend </p>
+                            <p> <input type="radio" name="trainning_manner"> In a Studio </p>
+                            <p> <input type="radio" name="trainning_manner"> In a group </p>
                         </div>
                     </div>
-                    <div class="col span-1-of-3 box">
+                </div>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="hight" class="gym-label"> <span> * </span> Height: </label> <br>
-                            <input name="hight" type="text" required/>
-                        </div> 
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="weight" class="gym-label"> <span> * </span> Weight: </label> <br>
-                            <input name="weight" type="text" required/>
-                        </div> 
+                        <label for="name" class="gym-label"> <span> * </span> Does the workout cost you money? </label>
+                            <p> <input type="radio" name="trainning_cost"> Yes </p>
+                            <p> <input type="radio" name="trainning_cost"> No </p>
+                            <p> <input type="radio" name="trainning_cost"> Depsends on the kind of trainning </p>
+                        </div>
                     </div>
                 </div>
-                
-            <button type="button" class="save-1 btn btn-primary" onClick="createParentUser()"> Save</button>   
+            <input type="hidden" name="route" value="create_training_answers_for_user">    
+            <button type="submit" class="save-1 btn btn-primary"> Save</button>   
         </form> 
     </section>
 </div>

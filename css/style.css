@@ -24,6 +24,10 @@ section{
     padding: 1%
 }
 
+p{
+    word-spacing: 3px;  
+}
+
 h1{
     font-weight: bold;
     word-spacing: 5px;
@@ -80,9 +84,11 @@ input[type=text]{
 
 .bg-lightblue{
     background-color: #337ab7;
-    width: 87.2%;
+    width: 1170px;
 }
 
 .copyrights{
     margin-top:18px;
 }
+
+

@@ -35,7 +35,6 @@
                      ?>
                 </div>
                 <p class="describe-info"> Please fill in your personal details </p>
-                <p class="success-message"></p>
                 <div class="row gym-form">
                     <div class="col span-1-of-2 box">
                         <div class="registration-info">
