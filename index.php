@@ -26,7 +26,7 @@
       <section id="registration-form">
             <form action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
                 <h1> Registration  </h1>
-                <div>
+                <div class="error">
                     <?php 
                     if( isSet($_GET['error-message']) ){
                         echo $_GET['error-message'];
