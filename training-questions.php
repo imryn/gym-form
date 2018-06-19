@@ -60,7 +60,7 @@
                             <p> <input type="checkbox" name="unaerobic_exercises"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
                             <p> <input type="checkbox" name="gymsport"> Both </p>
                         </div>
-                    </div>checkbox
+                    </div>
                 </div>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
