@@ -50,10 +50,10 @@
                     <div class="col span-1-of-2 box">
                         <div class="registration-info">
                             <label for="age" class="gym-label"> <span> * </span> Choose Your Age: </label>
-                            <p> <input type="radio" name="agepref" value="20-24"> 20-26 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 27-33 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 34-40 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 40+ </p>                  
+                            <p> <input type="radio" name="agepref" value="20-26"> 20-26 </p>
+                            <p> <input type="radio" name="agepref" value="27-33"> 27-33 </p>
+                            <p> <input type="radio" name="agepref" value="34-40"> 34-40 </p>
+                            <p> <input type="radio" name="agepref" value="40+"> 40+ </p>                  
                         </div>
                     </div>
                 </div>
