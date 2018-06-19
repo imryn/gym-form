@@ -29,7 +29,7 @@
     <div class="container">
       <section id="gym-questions">
             <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
-                <h1> Questions For Gym Training  </h1>
+                <h1> Questions For Training  </h1>
                 <div>
                     <?php 
                     if( isSet($_GET['error-message']) ){
