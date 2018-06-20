@@ -30,7 +30,7 @@
       <section id="gym-questions">
             <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
                 <h1> Questions For Training  </h1>
-                <div>
+                <div class="error">
                     <?php 
                     if( isSet($_GET['error-message']) ){
                         echo $_GET['error-message'];
@@ -41,9 +41,17 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
+                            <label for="id" class="gym-label"> <span> * </span> Your ID: </label> <br>
+                            <input name="userid" type="text" required/>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">
                             <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport are you mostly do?  </label>
                             <p> <input type="checkbox" name="bicycle"> Driving on bicycle </p>
-                            <p> <input type="checkbox" name="gymsport"> Going to the gym </p>
+                            <p> <input type="checkbox" name="goingtogym"> Going to the gym </p>
                             <p> <input type="checkbox" name="martialarts"> Martial arts </p>
                             <p> <input type="checkbox" name="game"> Playing football, basketball, handball etc. </p>             
                             <p> <input type="checkbox" name="running"> Running </p>
@@ -56,7 +64,7 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
                             <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
-                            <p> <input type="checkbox" name="swimming"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
+                            <p> <input type="checkbox" name="aerobic_exercises"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
                             <p> <input type="checkbox" name="unaerobic_exercises"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
                             <p> <input type="checkbox" name="gymsport"> Both </p>
                         </div>
@@ -92,7 +100,7 @@
                             <p> <input type="checkbox" name="balance"> Balance </p>
                             <p> <input type="checkbox" name="cardio"> Cardio </p>
                             <p> <input type="checkbox" name="shaping_and_toning"> Shaping and toning </p>
-                            <p> <input type="checkbox" name="weight loss"> Weight loss </p>
+                            <p> <input type="checkbox" name="weight_loss"> Weight loss </p>
                             <p> <input type="checkbox" name="goal"> All </p>
                         </div>
                     </div>
@@ -119,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-            <input type="hidden" name="route" value="create_training_answers_for_user">    
+            <input type="hidden" name="route" value="create_answers_form">    
             <button type="submit" class="save-1 btn btn-primary"> Save</button>   
         </form> 
     </section>

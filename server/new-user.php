@@ -103,7 +103,8 @@
             else{
                 header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
             }
-        } 
+        }
+        
         
         public function __destruct(){
             $this->db->close();
