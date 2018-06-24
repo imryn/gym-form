@@ -41,14 +41,6 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="id" class="gym-label"> <span> * </span> Your ID: </label> <br>
-                            <input name="userid" type="text" required/>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-1 box">
-                        <div class="registration-info">
                             <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport are you mostly do?  </label>
                             <p> <input type="checkbox" name="bicycle"> Driving on bicycle </p>
                             <p> <input type="checkbox" name="goingtogym"> Going to the gym </p>
