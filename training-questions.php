@@ -123,10 +123,7 @@
             <button type="submit" class="save-1 btn btn-primary"> Save</button>   
         </form> 
     </section>
-</div>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
-       
+</div>  
 
               <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">
