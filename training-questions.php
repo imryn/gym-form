@@ -56,9 +56,9 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
                             <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
-                            <p> <input type="checkbox" name="aerobic_exercises"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
-                            <p> <input type="checkbox" name="unaerobic_exercises"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
-                            <p> <input type="checkbox" name="gymsport"> Both </p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="aerobic"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="both"> Both </p>
                         </div>
                     </div>
                 </div>
