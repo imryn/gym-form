@@ -26,7 +26,7 @@
         public function createQuestionsFormForUser(){
             $this->allowSpecialCharacters($_POST);
 
-            $values = "{$_POST['userid']},'{$_POST['bicycle']}','{$_POST['goingtogym']}','{$_POST['martialarts']}','{$_POST['game']}','{$_POST['running']}',
+            $values = "{$_SESSION['userid']},'{$_POST['bicycle']}','{$_POST['goingtogym']}','{$_POST['martialarts']}','{$_POST['game']}','{$_POST['running']}',
             '{$_POST['swimming']}','{$_POST['unoraerobic_exercises']}','{$_POST['gymsport']}','{$_POST['training_frequency']}',
             '{$_POST['training_favorite_time']}','{$_POST['balance']}','{$_POST['cardio']}','{$_POST['shaping_and_toning']}','{$_POST['weight_loss']}','{$_POST['goal']}',
             '{$_POST['trainning_manner']}','{$_POST['trainning_cost']}'";
