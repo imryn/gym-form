@@ -37,7 +37,7 @@
     <div class="container">
       <section id="gym-questions">
             <form  action="/gym-form/server/api.php" method="post">
-                <h1> Questionnaire for Trainee  </h1>
+                <h1> Questionnaire for Trainer  </h1>
                 <div class="error">
                     <?php 
                     if( isSet($_GET['error-message']) ){
