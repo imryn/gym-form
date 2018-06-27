@@ -24,8 +24,9 @@
                 <a class="dropdown-item" href="login_page.php?usertype=parent"> Log in as parent </a>
               </div>
             </li> -->
+            <li class="links"><a href="training-questions.php"> Questionnaire for Trainee </a></li>
             <li class="links"><a href="login_page.php"> Login </a></li>
-            <li class="links"><a href="training-questions.php"> Training Questions </a></li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

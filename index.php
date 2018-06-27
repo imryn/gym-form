@@ -40,8 +40,8 @@
                             <label class="gym-label"> <span> * </span> Choose Your Gender </label> <br>
                                     <select name="gender" size="1" id="gender-select" > 
                                                 <option value="empty" selected> - Select - </option>
-                                                <option value="man"> Man  </option>
-                                                <option value="woman"> Woman </option>
+                                                <option value="man"> Male  </option>
+                                                <option value="woman"> Female </option>
                                     </select> 
                         </div>
                     </div>
@@ -86,13 +86,13 @@
                     </div>
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="address"> City </label> <br>
+                            <label for="address"> City: </label> <br>
                             <input name="city" type="text"/> 
                         </div>
                     </div>
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="email" class="gym-label"> <span> * </span> Email: </label> <br>
+                            <label for="email" class="gym-label"> <span> * </span> Email Address: </label> <br>
                             <input name="email" type="email" required/>
                         </div>
                     </div>
@@ -100,20 +100,20 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="phone"> Phone </label> <br>
+                            <label for="phone"> Phone No.:</label> <br>
                             <input name="phonenumber" type="text"/> 
                         </div>
                     </div>
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label for="hight" class="gym-label"> <span> * </span> Height: </label> <br>
-                            <input name="height" type="text" required/>
+                            <input name="height" type="number" required/>
                         </div> 
                     </div>
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label for="weight" class="gym-label"> <span> * </span> Weight: </label> <br>
-                            <input name="weight" type="text" required/>
+                            <input name="weight" type="number" required/>
                         </div> 
                     </div>
                 </div>

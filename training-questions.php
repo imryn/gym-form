@@ -18,7 +18,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-        <title>Registration</title>
+        <title> Trainer Questionnaire</title>
     </head>
 
     <body>
@@ -29,7 +29,7 @@
     <div class="container">
       <section id="gym-questions">
             <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
-                <h1> Questions For Training  </h1>
+                <h1> Questionnaire for Trainee</h1>
                 <div>
                     <?php 
                     if( isSet($_GET['error-message']) ){
@@ -37,13 +37,13 @@
                     }
                      ?>
                 </div>
-                <p class="describe-info"> Please fill the form to get your training suggestion </p>
+                <p class="describe-info"> Please fill the form to get your training suggestion: </p>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport are you mostly do?  </label>
-                            <p> <input type="checkbox" name="bicycle"> Driving on bicycle </p>
-                            <p> <input type="checkbox" name="gymsport"> Going to the gym </p>
+                            <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport do you practice?  </label>
+                            <p> <input type="checkbox" name="bicycle"> Riding a bicycle </p>
+                            <p> <input type="checkbox" name="gymsport"> Work out in the gym </p>
                             <p> <input type="checkbox" name="martialarts"> Martial arts </p>
                             <p> <input type="checkbox" name="game"> Playing football, basketball, handball etc. </p>             
                             <p> <input type="checkbox" name="running"> Running </p>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="describe-info"> Please answer this question only if you are going to the gym </p>
+                <p class="describe-info"> Please answer following questions only if you work out in the gym: </p>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
@@ -65,7 +65,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times are you trianing in a month? </label>
+                        <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times do you practice a month? </label>
                             <p> <input type="radio" name="training_frequency" value="1-3 times"> 1-3 times </p>
                             <p> <input type="radio" name="training_frequency" value="4-7 times"> 4-7 times </p>
                             <p> <input type="radio" name="training_frequency" value="8-11 times"> 8-11 times </p>
@@ -76,7 +76,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is your favorite time at the day to train? </label>
+                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is the most effective time for training? </label>
                             <p> <input type="radio" name="training_favorite_time" value="early morning"> Early morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="morning"> Morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="noon"> Noon </p>
@@ -88,7 +88,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
+                        <label for="goal" class="gym-label"> <span> * </span> What is the purpose of your workout </label>
                             <p> <input type="checkbox" name="balance"> Balance </p>
                             <p> <input type="checkbox" name="cardio"> Cardio </p>
                             <p> <input type="checkbox" name="shaping_and_toning"> Shaping and toning </p>
@@ -100,9 +100,9 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainningmanner" class="gym-label"> <span> * </span> How do you do the workout? </label>
+                        <label for="trainningmanner" class="gym-label"> <span> * </span> Who or where do you practice ? </label>
                             <p> <input type="radio" name="trainning_manner" value="alone"> Alone </p>
-                            <p> <input type="radio" name="trainning_manner" value="with personal trainer"> With personal trainer </p>
+                            <p> <input type="radio" name="trainning_manner" value="with personal trainer"> With a personal trainer </p>
                             <p> <input type="radio" name="trainning_manner" value="with a friend"> With a friend </p>
                             <p> <input type="radio" name="trainning_manner" value="in a studio"> In a Studio </p>
                             <p> <input type="radio" name="trainning_manner" value="in a group"> In a group </p>
@@ -112,10 +112,31 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> Does the workout cost you money? </label>
+                        <label for="name" class="gym-label"> <span> * </span> Does practice cost you money? </label>
                             <p> <input type="radio" name="trainning_cost" value="yes"> Yes </p>
                             <p> <input type="radio" name="trainning_cost" value="no"> No </p>
                             <p> <input type="radio" name="trainning_cost" value="depends on the kind of trainning"> Depsends on the kind of trainning </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">
+                        <label for="name" class="gym-label"> <span> * </span> What do you eat before training? </label>
+                            <p> <input type="radio" name="food" value="fruit"> Fruit </p>
+                            <p> <input type="radio" name="food" value="vegetable"> Vegetable </p>
+                            <p> <input type="radio" name="food" value="bigmeal"> big meal </p>
+                            <p> <input type="radio" name="food" value="smallmeal"> A Small meal </p>
+                            <p> <input type="radio" name="food" value="energysnack"> Energy snack </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">
+                        <label for="name" class="gym-label"> <span> * </span> Are you satisfied with your weight? </label>
+                        <p> <input type="radio" name="trainning_satisfied" value="yes"> Yes </p>
+                            <p> <input type="radio" name="trainning_satisfied" value="no"> No </p>
                         </div>
                     </div>
                 </div>

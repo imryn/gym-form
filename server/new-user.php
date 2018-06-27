@@ -40,7 +40,7 @@
                 $error = "No last name was entered"; 
             }
             else if(empty($_POST['userid']) && strlen($_POST['userid'])==9){
-                $error = "The ID that was entered is invalid"; 
+                $error = "ID field must contain 9 digits"; 
             }
             else if(empty($_POST['password'])){
                 $error = "No password was entered"; 
@@ -49,10 +49,10 @@
                 $error = "No city was entered";
             }
             else if(empty($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-                $error = "The email is already used or invalid";
+                $error = "Email address is already in use or invalid";
             }
             else if(empty($_POST['phonenumber'])){
-                $error = "The phonenumber is invalid";
+                $error = "Phone number is invalid";
             }
             else if(empty($_POST['height'])){
                 $error = "You can't send the form without sending height";
