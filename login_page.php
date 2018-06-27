@@ -26,7 +26,7 @@
 
 <body>
 <section id="login-section">
-    <form action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
+    <form action="/gym-form/server/api.php" method="post">
             <div id="playground-container">
 	    
 		<div class="col-md-10 col-md-offset-1 main" >

@@ -36,7 +36,7 @@
 
     <div class="container">
       <section id="gym-questions">
-            <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
+            <form  action="/gym-form/server/api.php" method="post">
                 <h1> Questionnaire for Trainee  </h1>
                 <div class="error">
                     <?php 

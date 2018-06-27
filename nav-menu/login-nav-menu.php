@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
             <!-- <li><a href="login_page.php?usertype=crew"> Login For Crew </a></li>
             <li><a href="login_page.php?usertype=parent"> Login For Parents </a></li> -->
-            <li class="links"><a href="/tihnot_zad_sharat/gym-form/server/api.php?route=signout"> Sign Out </a></li>
+            <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Log in 

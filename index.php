@@ -24,7 +24,7 @@
         </header>
     <div class="container">
       <section id="registration-form">
-            <form action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
+            <form action="/gym-form/server/api.php" method="post">
                 <h1> Registration  </h1>
                 <div class="error">
                     <?php 

@@ -75,7 +75,7 @@
                 $result =$this->db->query($sql);
                 if($result){
                     $id = $this->db->insert_id;
-                    header("Location: /tihnot_zad_sharat/gym-form/index.php?error-message=The form was saved!");
+                    header("Location: /gym-form/index.php?error-message=The form was saved!");
                     //  echo json_encode((object) [
                     //     'id' => $id,
                     //      'success'=>true
@@ -94,14 +94,14 @@
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['userid'] = $_POST['userid'];
-                    header("Location: /tihnot_zad_sharat/gym-form/training-questions.php"); 
+                    header("Location: /gym-form/training-questions.php"); 
                 }
                 else{
-                    header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
+                    header("Location: /gym-form/login_page.php");
                 }
             }
             else{
-                header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
+                header("Location: /gym-form/login_page.php");
             }
         }
 

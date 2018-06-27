@@ -37,7 +37,7 @@
             $result =$this->db->query($sql);
             if($result){
                 $id = $this->db->insert_id;
-                header("Location: /tihnot_zad_sharat/gym-form/training-questions.php?error-message=The form was saved!");
+                header("Location: /gym-form/training-questions.php?error-message=The form was saved!");
             }
         }
 
