@@ -42,12 +42,12 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                             <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport are you mostly do?  </label>
-                            <p> <input type="checkbox" name="bicycle"> Driving on bicycle </p>
-                            <p> <input type="checkbox" name="goingtogym"> Going to the gym </p>
-                            <p> <input type="checkbox" name="martialarts"> Martial arts </p>
-                            <p> <input type="checkbox" name="game"> Playing football, basketball, handball etc. </p>             
-                            <p> <input type="checkbox" name="running"> Running </p>
-                            <p> <input type="checkbox" name="swimming"> Swimming </p>     
+                            <p> <input type="checkbox" name="bicycle" value="1"> Driving on bicycle </p>
+                            <p> <input type="checkbox" name="goingtogym" value="1"> Going to the gym </p>
+                            <p> <input type="checkbox" name="martialarts" value="1"> Martial arts </p>
+                            <p> <input type="checkbox" name="game" value="1"> Playing football, basketball, handball etc. </p>             
+                            <p> <input type="checkbox" name="running" value="1"> Running </p>
+                            <p> <input type="checkbox" name="swimming" value="1"> Swimming </p>     
                         </div>
                     </div>
                 </div>
@@ -89,11 +89,11 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                         <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
-                            <p> <input type="checkbox" name="balance"> Balance </p>
-                            <p> <input type="checkbox" name="cardio"> Cardio </p>
-                            <p> <input type="checkbox" name="shaping_and_toning"> Shaping and toning </p>
-                            <p> <input type="checkbox" name="weight_loss"> Weight loss </p>
-                            <p> <input type="checkbox" name="goal"> All </p>
+                            <p> <input type="checkbox" name="balance" value="1"> Balance </p>
+                            <p> <input type="checkbox" name="cardio" value="1"> Cardio </p>
+                            <p> <input type="checkbox" name="shaping_and_toning" value="1"> Shaping and toning </p>
+                            <p> <input type="checkbox" name="weight_loss" value="1"> Weight loss </p>
+                            <p> <input type="checkbox" name="goal" value="1"> All </p>
                         </div>
                     </div>
                 </div>
