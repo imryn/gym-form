@@ -1,6 +1,7 @@
 <?php
 
        include 'new-user.php';
+       include 'questions.php';
        
        $method = $_SERVER['REQUEST_METHOD'];
 
@@ -14,6 +15,11 @@
                 case "login":
                     $user = new Users();
                     $user->login();   
+                    break;
+                
+                case "create_answers_form":
+                    $question = new Questions();
+                    $question->createQuestionsFormForUser();
                     break;
             }
        }

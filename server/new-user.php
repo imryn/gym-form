@@ -94,7 +94,7 @@
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['userid'] = $_POST['userid'];
-                    header("Location: /tihnot_zad_sharat/gym-form/training-recommendation.php"); 
+                    header("Location: /tihnot_zad_sharat/gym-form/training-questions.php"); 
                 }
                 else{
                     header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
@@ -103,7 +103,15 @@
             else{
                 header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
             }
-        } 
+        }
+
+        public function isLogin() {
+            if(!empty( $_SESSION['userid'] )) {
+                return true;
+            }
+            return false;
+        }
+        
         
         public function __destruct(){
             $this->db->close();

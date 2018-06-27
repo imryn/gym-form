@@ -1,3 +1,11 @@
+<?php
+    include 'server/new-user.php';
+    $user = new Users();
+    if( !$user->isLogin() ) {
+        header('location:index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="he">
     <head>
@@ -29,8 +37,8 @@
     <div class="container">
       <section id="gym-questions">
             <form  action="/tihnot_zad_sharat/gym-form/server/api.php" method="post">
-                <h1> Questionnaire for Trainee</h1>
-                <div>
+                <h1> Questionnaire for Trainee  </h1>
+                <div class="error">
                     <?php 
                     if( isSet($_GET['error-message']) ){
                         echo $_GET['error-message'];
@@ -42,12 +50,12 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                             <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport do you practice?  </label>
-                            <p> <input type="checkbox" name="bicycle"> Riding a bicycle </p>
-                            <p> <input type="checkbox" name="gymsport"> Work out in the gym </p>
-                            <p> <input type="checkbox" name="martialarts"> Martial arts </p>
-                            <p> <input type="checkbox" name="game"> Playing football, basketball, handball etc. </p>             
-                            <p> <input type="checkbox" name="running"> Running </p>
-                            <p> <input type="checkbox" name="swimming"> Swimming </p>     
+                            <p> <input type="checkbox" name="bicycle" value="1"> Riding a bicycle </p>
+                            <p> <input type="checkbox" name="gymsport" value="1"> Work out in the gym </p>
+                            <p> <input type="checkbox" name="martialarts" value="1"> Martial arts </p>
+                            <p> <input type="checkbox" name="game" value="1"> Playing football, basketball, handball etc. </p>             
+                            <p> <input type="checkbox" name="running" value="1"> Running </p>
+                            <p> <input type="checkbox" name="swimming" value="1"> Swimming </p>     
                         </div>
                     </div>
                 </div>
@@ -56,9 +64,9 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
                             <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
-                            <p> <input type="checkbox" name="swimming"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
-                            <p> <input type="checkbox" name="unaerobic_exercises"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
-                            <p> <input type="checkbox" name="gymsport"> Both </p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="aerobic"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="both"> Both </p>
                         </div>
                     </div>
                 </div>
@@ -88,12 +96,12 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="goal" class="gym-label"> <span> * </span> What is the purpose of your workout </label>
-                            <p> <input type="checkbox" name="balance"> Balance </p>
-                            <p> <input type="checkbox" name="cardio"> Cardio </p>
-                            <p> <input type="checkbox" name="shaping_and_toning"> Shaping and toning </p>
-                            <p> <input type="checkbox" name="weight loss"> Weight loss </p>
-                            <p> <input type="checkbox" name="goal"> All </p>
+                        <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
+                            <p> <input type="checkbox" name="balance" value="1"> Balance </p>
+                            <p> <input type="checkbox" name="cardio" value="1"> Cardio </p>
+                            <p> <input type="checkbox" name="shaping_and_toning" value="1"> Shaping and toning </p>
+                            <p> <input type="checkbox" name="weight_loss" value="1"> Weight loss </p>
+                            <p> <input type="checkbox" name="goal" value="1"> All </p>
                         </div>
                     </div>
                 </div>
@@ -140,14 +148,11 @@
                         </div>
                     </div>
                 </div>
-            <input type="hidden" name="route" value="create_training_answers_for_user">    
+            <input type="hidden" name="route" value="create_answers_form">       
             <button type="submit" class="save-1 btn btn-primary"> Save</button>   
         </form> 
     </section>
-</div>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
-       
+</div>  
 
               <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">
