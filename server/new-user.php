@@ -104,6 +104,13 @@
                 header("Location: /tihnot_zad_sharat/gym-form/login_page.php");
             }
         }
+
+        public function isLogin() {
+            if(!empty( $_SESSION['userid'] )) {
+                return true;
+            }
+            return false;
+        }
         
         
         public function __destruct(){
