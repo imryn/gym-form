@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
             <!-- <li><a href="login_page.php?usertype=crew"> Login For Crew </a></li>
             <li><a href="login_page.php?usertype=parent"> Login For Parents </a></li> -->
-            <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
+
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Log in 
@@ -24,8 +24,9 @@
                 <a class="dropdown-item" href="login_page.php?usertype=parent"> Log in as parent </a>
               </div>
             </li> -->
-            <li class="links"><a href="training-questions.php"> Training Questions </a></li>
+            <li class="links"><a href="training-questions.php"> Trainee Questionnaire </a></li>
             <li class="links"><a href="training-recommendation.php"> Your Recommendation Training </a></li>
+            <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

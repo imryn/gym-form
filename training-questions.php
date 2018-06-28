@@ -26,7 +26,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-        <title> Trainer Questionnaire</title>
+        <title> Trainee Questionnaire</title>
     </head>
 
     <body>
