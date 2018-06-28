@@ -61,7 +61,7 @@
                 $error = "You can't send the form without sending weight";
             }
             if(!empty($error)){
-                header("Location: /tihnot_zad_sharat/gym-form/index.php?error-message=$error");
+                header("Location:/gym-form/index.php?error-message=$error");
             }
 
             else{

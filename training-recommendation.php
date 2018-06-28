@@ -18,7 +18,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-        <title>Registration</title>
+        <title>Recommendations For Trainee</title>
     </head>
 
     <body>
@@ -28,96 +28,24 @@
 
     <div class="container">
       <section id="gym-recommendation">
-            <form>
-                <h1> Recommendation For Gym Training  </h1>
-                <p class="describe-info"> Please fill the form to get your gym training suggestion </p>
-                <p class="success-message"></p>
-                <div class="row gym-form">
-                    <div class="col span-1-of-2 box">
-                        <div class="registration-info">
-                            <label class="gym-label"> <span> * </span> Choose Your Gender </label> <br>
-                                        <select name="gender" size="1" id="gender-select" > 
-                                                <option value="empty" selected> - Select - </option>
-                                                <option value="man"> Man  </option>
-                                                <option value="woman"> Woman </option>
-                                        </select> 
-                        </div>
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-2 box">
-                        <div class="registration-info">
-                            <label for="age" class="gym-label"> <span> * </span> Choose Your Age: </label>
-                            <p> <input type="radio" name="agepref" value="20-24"> 20-26 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 27-33 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 34-40 </p>
-                            <p> <input type="radio" name="agepref" value="20-24"> 40+ </p>                  
-                        </div>
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> First Name: </label>
-                            <input name="firstname" type="text" required/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> Last Name: </label>
-                            <input name="lastname" type="text" required/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="id" class="gym-label"> <span> * </span> ID: </label> <br>
-                            <input name="id" type="text" required/>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="password" class="gym-label"> <span> * </span> Password: </label> <br>
-                            <input name="password" type="password" id="password" required/>
-                        </div> 
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="address"> City </label> <br>
-                            <input name="addressuser" type="text"/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="email" class="gym-label"> <span> * </span> Email: </label> <br>
-                            <input name="email" type="email" required/>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gym-form">
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="address"> City </label> <br>
-                            <input name="addressuser" type="text"/> 
-                        </div>
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="hight" class="gym-label"> <span> * </span> Height: </label> <br>
-                            <input name="hight" type="text" required/>
-                        </div> 
-                    </div>
-                    <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="weight" class="gym-label"> <span> * </span> Weight: </label> <br>
-                            <input name="weight" type="text" required/>
-                        </div> 
-                    </div>
-                </div>
-                
-            <button type="submit" class="save-1 btn btn-primary"> Save</button>   
-        </form> 
+
+                <h1> Recommendations For Trainee </h1>
+                // These code snippets use an open-source library. http://unirest.io/php
+                <?php   
+                    // These code snippets use an open-source library. http://unirest.io/php
+                    $response = Unirest\Request::post("https://bmi.p.mashape.com/",
+                    array(
+                        "X-Mashape-Key" => "aejQthTAdfmshphAPr050XvBjHgvp1sT1fOjsno8wzvozPmY7Q",
+                        "Content-Type" => "application/json",
+                        "Accept" => "application/json"
+                    )
+                    "{
+                        \"weight\":{\"value\":\"85.00\",\"unit\":\"kg\"},
+                        \"height\":{\"value\":\"170.00\",\"unit\":\"cm\"},
+                        \"sex\":\"m\",\"age\":\"24\",\"waist\":\"34.00\",\"hip\":\"40.00\"
+                    }"
+                    );
+                ?>
     </section>
 </div>
         <script src="commons.js"></script>
