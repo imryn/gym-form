@@ -49,7 +49,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport do you practice?  </label>
+                            <label for="sporttypes" class="gym-label"> <span> * </span> 1. What kind of sport do you practice?  </label>
                             <p> <input type="checkbox" name="bicycle" value="1"> Riding a bicycle </p>
                             <p> <input type="checkbox" name="gymsport" value="1"> Work out in the gym </p>
                             <p> <input type="checkbox" name="martialarts" value="1"> Martial arts </p>
@@ -62,7 +62,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times do you practice a month? </label>
+                        <label for="trainingfrequency" class="gym-label"> <span> * </span> 2. How many times do you practice a month? </label>
                             <p> <input type="radio" name="training_frequency" value="1-3 times"> 1-3 times </p>
                             <p> <input type="radio" name="training_frequency" value="4-7 times"> 4-7 times </p>
                             <p> <input type="radio" name="training_frequency" value="8-11 times"> 8-11 times </p>
@@ -73,7 +73,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is the most effective time for training? </label>
+                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> 3. What is the most effective time for training? </label>
                             <p> <input type="radio" name="training_favorite_time" value="early morning"> Early morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="morning"> Morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="noon"> Noon </p>
@@ -85,7 +85,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
+                        <label for="goal" class="gym-label"> <span> * </span> 4. What is your goal for trainning? </label>
                             <p> <input type="checkbox" name="balance" value="1"> Balance </p>
                             <p> <input type="checkbox" name="cardio" value="1"> Cardio </p>
                             <p> <input type="checkbox" name="shaping_and_toning" value="1"> Shaping and toning </p>
@@ -97,7 +97,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainningmanner" class="gym-label"> <span> * </span> Who or where do you practice ? </label>
+                        <label for="trainningmanner" class="gym-label"> <span> * </span> 5. Who or where do you practice ? </label>
                             <p> <input type="radio" name="trainning_manner" value="alone"> Alone </p>
                             <p> <input type="radio" name="trainning_manner" value="with personal trainer"> With a personal trainer </p>
                             <p> <input type="radio" name="trainning_manner" value="with a friend"> With a friend </p>
@@ -109,7 +109,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> Does practice cost you money? </label>
+                        <label for="name" class="gym-label"> <span> * </span> 6. Does practice cost you money? </label>
                             <p> <input type="radio" name="trainning_cost" value="yes"> Yes </p>
                             <p> <input type="radio" name="trainning_cost" value="no"> No </p>
                             <p> <input type="radio" name="trainning_cost" value="depends on the kind of trainning"> Depsends on the kind of trainning </p>
@@ -119,7 +119,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> What do you eat before training? </label>
+                        <label for="name" class="gym-label"> <span> * </span> 7. What do you eat before training? </label>
                             <p> <input type="radio" name="food" value="fruit"> Fruit </p>
                             <p> <input type="radio" name="food" value="vegetable"> Vegetable </p>
                             <p> <input type="radio" name="food" value="bigmeal"> Big meal </p>
@@ -131,17 +131,17 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> Are you satisfied with your weight? </label>
+                            <label for="name" class="gym-label"> <span> * </span> 8. Are you satisfied with your weight? </label>
                                 <p> <input type="radio" name="trainning_satisfied" value="yes"> Yes </p>
                                 <p> <input type="radio" name="trainning_satisfied" value="no"> No </p>
                         </div>
                     </div>
                 </div>
-                <p class="describe-info"> Please answer following questions only if you work out in the gym: </p>
+                <p class="describe-info"> Please answer following question only if you work out in the gym: </p>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
-                            <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
+                            <label for="sportgymtypes" class="gym-label"> <span> * </span> 9. What kind of exercises are you doing at the gym?  </label>
                             <p> <input type="radio" name="unoraerobic_exercises" value="aerobic"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
                             <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
                             <p> <input type="radio" name="unoraerobic_exercises" value="both"> Both </p>

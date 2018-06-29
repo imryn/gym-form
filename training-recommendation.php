@@ -27,23 +27,46 @@
         </header>
 
     <div class="container">
-      <section id="gym-recommendation">
+        <section id="gym-recommendation">
 
-                <h1> Recommendations For Trainee </h1>
-                // These code snippets use an open-source library. http://unirest.io/php
-                <?php   
-                    // These code snippets use an open-source library. http://unirest.io/php
-                    $response = Unirest\Request::post("https://bmi.p.mashape.com/",
-                    array(
-                        "X-Mashape-Key" => "kiaproject",
-                        "Content-Type" => "application/json",
-                        "Accept" => "application/json"
-                    )
-                    "{\"weight\":{\"value\":\"85.00\",\"unit\":\"kg\"},\"height\":{\"value\":\"170.00\",\"unit\":\"cm\"},\"sex\":\"m\",\"age\":\"24\",\"waist\":\"34.00\",\"hip\":\"40.00\"}"
-                    );
-                ?>
-    </section>
-</div>
+            <h1> Recommendations For Trainee </h1>
+            <div>
+                <form  method="GET" id="bmi" action="<?php ($_SERVER["PHP_SELF"]);?>">
+                    <u> <b> BMI Calculator <b> </u> <br> <br>
+                    <label for="height"> Height: </label>
+                    <input type="text" id="height" name="height">
+                    <label for="weight"> Weight: </label>
+                    <input type="text" id="weight" name="weight">
+                    <br>
+
+                    <input type="submit" value="Calc" class="save-1 btn btn-primary">
+                </form>
+            </div>
+            
+            <?php
+                require_once 'Src/Unirest.php';
+                
+                if(isset($_GET['height'], $_GET['weight'])){
+                    $headers = array("X-Mashape-Key" => "tMht3TOaWwmshYnJhPVM3xX9PWUPp1sf1Rljsnodwzz64Kl7BT","Accept" => "application/json");
+                    
+                    $response = Unirest\Request::GET("https://gabamnml-health-v1.p.mashape.com/bmi?height=".urlencode($_GET["height"])."&weight=".urlencode($_GET["weight"]), $headers);                     
+                    
+                    $result = $response->body->result;
+                    $status = $response->body->status;
+                    $idlwoman = $response->body->ideal_weight->woman;
+                    $idlman = $response->body->ideal_weight->man;               
+                    
+                }
+            ?>
+
+            <div style="margin: 0 auto; text-align:left; color: black;">
+                <p> Your BMI: <?php if(isset($_GET['height'], $_GET['weight'])){echo(round($result));} ?> </p>
+                <p> Status: <?php if(isset($_GET['height'], $_GET['weight'])){echo $status ;} ?> </p>
+                <p> Ideal weight for a woman: <?php if(isset($_GET['height'], $_GET['weight'])){echo $idlwoman ;} ?>  </p>
+                <p> Ideal weight for a man: <?php if(isset($_GET['height'], $_GET['weight'])){echo $idlman ;} ?>  </p>
+            </div> 
+        </section>
+    </div>
         <script src="commons.js"></script>
         <script src="main.js"></script>
        

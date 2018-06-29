@@ -25,7 +25,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-        <title> Trainee Questionnaire</title>
+        <title> Final Trainee Questionnaire</title>
     </head>
 
     <body>
@@ -48,7 +48,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="sporttypes" class="gym-label"> <span> * </span> What kind of sport do you practice?  </label> </br>
+                            <label for="sporttypes" class="gym-label"> <span> * </span> 1. What kind of sport do you practice?  </label> </br>
                             <input type="checkbox" name="bicycle" <?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle'] == "1" ? 'checked' : '' ?> disabled> Riding a bicycle </p>
                             <input type="checkbox" name="gymsport" <?php if( isSet($_GET['gymsport']) ) echo $_GET['gymsport'] == "1" ? 'checked' : '' ?> disabled> Work out in the gym </p>
                             <input type="checkbox" name="martialarts" <?php if( isSet($_GET['martialarts']) ) echo $_GET['martialarts'] == "1" ? 'checked' : '' ?> disabled> Martial arts </p>
@@ -62,10 +62,10 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfrequency" class="gym-label"> <span> * </span> How many times do you practice a month? </label>
+                        <label for="trainingfrequency" class="gym-label"> <span> * </span> 2. How many times do you practice a month? </label>
                             <p> <input type="radio" name="training_frequency" value="1-3 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "1-3 times" ? 'checked' : '' ?> disabled> 1-3 times </p>
                             <p> <input type="radio" name="training_frequency" value="4-7 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "4-7 times" ? 'checked' : '' ?> disabled> 4-7 times </p>
-                            <p> <input type="radio" name="training_frequency" value="8-11 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "8-11" ? 'checked' : '' ?> disabled> 8-11 times </p>
+                            <p> <input type="radio" name="training_frequency" value="8-11 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "8-11 times" ? 'checked' : '' ?> disabled> 8-11 times </p>
                             <p> <input type="radio" name="training_frequency" value="11+" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "11+" ? 'checked' : '' ?> disabled> 11+ </p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> What is the most effective time for training? </label>
+                        <label for="trainingfavoritetime" class="gym-label"> <span> * </span> 3. What is the most effective time for training? </label>
                             <p> <input type="radio" name="training_favorite_time" value="early morning" <?php if( isSet($_GET['training_favorite_time']) ) echo $_GET['training_favorite_time'] == "early morning" ? 'checked' : '' ?> disabled> Early morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="morning" <?php if( isSet($_GET['training_favorite_time']) ) echo $_GET['training_favorite_time'] == "morning" ? 'checked' : '' ?> disabled> Morning </p>
                             <p> <input type="radio" name="training_favorite_time" value="noon" <?php if( isSet($_GET['training_favorite_time']) ) echo $_GET['training_favorite_time'] == "noon" ? 'checked' : '' ?> disabled> Noon </p>
@@ -85,7 +85,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="goal" class="gym-label"> <span> * </span> What is your goal for trainning? </label>
+                        <label for="goal" class="gym-label"> <span> * </span> 4. What is your goal for trainning? </label>
                             <p> <input type="checkbox" name="balance" value="1" <?php if( isSet($_GET['balance']) ) echo $_GET['balance'] == "1" ? 'checked' : '' ?> disabled> Balance </p>
                             <p> <input type="checkbox" name="cardio" value="1" <?php if( isSet($_GET['cardio']) ) echo $_GET['cardio'] == "1" ? 'checked' : '' ?> disabled> Cardio </p>
                             <p> <input type="checkbox" name="shaping_and_toning" value="1" <?php if( isSet($_GET['shaping_and_toning']) ) echo $_GET['shaping_and_toning'] == "1" ? 'checked' : '' ?> disabled> Shaping and toning </p>
@@ -97,7 +97,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="trainningmanner" class="gym-label"> <span> * </span> Who or where do you practice ? </label>
+                        <label for="trainningmanner" class="gym-label"> <span> * </span> 5. Who or where do you practice ? </label>
                             <p> <input type="radio" name="trainning_manner" value="alone" <?php if( isSet($_GET['trainning_manner']) ) echo $_GET['trainning_manner'] == "alone" ? 'checked' : '' ?> disabled> Alone </p>
                             <p> <input type="radio" name="trainning_manner" value="with personal trainer" <?php if( isSet($_GET['trainning_manner']) ) echo $_GET['trainning_manner'] == "with personal trainer" ? 'checked' : '' ?> disabled> With a personal trainer </p>
                             <p> <input type="radio" name="trainning_manner" value="with a friend" <?php if( isSet($_GET['trainning_manner']) ) echo $_GET['trainning_manner'] == "with a friend" ? 'checked' : '' ?> disabled> With a friend </p>
@@ -109,7 +109,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> Does practice cost you money? </label>
+                        <label for="name" class="gym-label"> <span> * </span> 6. Does practice cost you money? </label>
                             <p> <input type="radio" name="trainning_cost" value="yes" <?php if( isSet($_GET['trainning_cost']) ) echo $_GET['trainning_cost'] == "yes" ? 'checked' : '' ?> disabled> Yes </p>
                             <p> <input type="radio" name="trainning_cost" value="no"  <?php if( isSet($_GET['trainning_cost']) ) echo $_GET['trainning_cost'] == "no" ? 'checked' : '' ?> disabled> No </p>
                             <p> <input type="radio" name="trainning_cost" value="depends on the kind of trainning"  <?php if( isSet($_GET['trainning_cost']) ) echo $_GET['trainning_cost'] == "depends on the kind of trainning" ? 'checked' : '' ?> disabled> Depsends on the kind of trainning </p>
@@ -119,7 +119,7 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> What do you eat before training? </label>
+                        <label for="name" class="gym-label"> <span> * </span> 7. What do you eat before training? </label>
                             <p> <input type="radio" name="food" value="fruit" <?php if( isSet($_GET['food']) ) echo $_GET['food'] == "fruit" ? 'checked' : '' ?> disabled> Fruit </p>
                             <p> <input type="radio" name="food" value="vegetable" <?php if( isSet($_GET['food']) ) echo $_GET['food'] == "vegetable" ? 'checked' : '' ?> disabled> Vegetable </p>
                             <p> <input type="radio" name="food" value="bigmeal" <?php if( isSet($_GET['food']) ) echo $_GET['food'] == "bigmeal" ? 'checked' : '' ?> disabled> Big meal </p>
@@ -131,17 +131,17 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                            <label for="name" class="gym-label"> <span> * </span> Are you satisfied with your weight? </label>
+                            <label for="name" class="gym-label"> <span> * </span> 8. Are you satisfied with your weight? </label>
                                 <p> <input type="radio" name="trainning_satisfied" value="yes" <?php if( isSet($_GET['trainning_satisfied']) ) echo $_GET['trainning_satisfied'] == "yes" ? 'checked' : '' ?> disabled> Yes </p>
                                 <p> <input type="radio" name="trainning_satisfied" value="no" <?php if( isSet($_GET['trainning_satisfied']) ) echo $_GET['trainning_satisfied'] == "no" ? 'checked' : '' ?> disabled> No </p>
                         </div>
                     </div>
                 </div>
-                <p class="describe-info"> Please answer following questions only if you work out in the gym: </p>
+                <p class="describe-info"> Please answer following question only if you work out in the gym: </p>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">        
-                            <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
+                            <label for="sportgymtypes" class="gym-label"> <span> * </span> 9. What kind of exercises are you doing at the gym?  </label>
                             <p> <input type="radio" name="unoraerobic_exercises" value="aerobic" <?php if( isSet($_GET['unoraerobic_exercises']) ) echo $_GET['unoraerobic_exercises'] == "aerobic" ? 'checked' : '' ?> disabled> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
                             <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic" <?php if( isSet($_GET['unoraerobic_exercises']) ) echo $_GET['unoraerobic_exercises'] == "unaerobic" ? 'checked' : '' ?> disabled> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
                             <p> <input type="radio" name="unoraerobic_exercises" value="both" <?php if( isSet($_GET['unoraerobic_exercises']) ) echo $_GET['unoraerobic_exercises'] == "both" ? 'checked' : '' ?> disabled> Both </p>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
             <input type="hidden" name="route" value="create_answers_form">       
-            <button type="submit" class="save-1 btn btn-primary"> Save</button>   
+            <!-- <button type="submit" class="save-1 btn btn-primary"> Save</button>    -->
         </form> 
     </section>
 </div>  
