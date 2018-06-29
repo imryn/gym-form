@@ -42,7 +42,7 @@
                     <input type="submit" value="Calc" class="save-1 btn btn-primary">
                 </form>
             </div>
-            
+
             <?php
                 require_once 'Src/Unirest.php';
                 
@@ -52,25 +52,17 @@
                     $response = Unirest\Request::GET("https://gabamnml-health-v1.p.mashape.com/bmi?height=".urlencode($_GET["height"])."&weight=".urlencode($_GET["weight"]), $headers);                     
                     
                     $result = $response->body->result;
-                    $status = $response->body->status;
-                    $idlwoman = $response->body->ideal_weight->woman;
-                    $idlman = $response->body->ideal_weight->man;               
-                    
+                    $status = $response->body->status;              
                 }
             ?>
 
             <div style="margin: 0 auto; text-align:left; color: black;">
-                <p> Your BMI: <?php if(isset($_GET['height'], $_GET['weight'])){echo(round($result));} ?> </p>
+                <p> Your BMI is: <?php if(isset($_GET['height'], $_GET['weight'])){echo(round($result));} ?> </p>
                 <p> Status: <?php if(isset($_GET['height'], $_GET['weight'])){echo $status ;} ?> </p>
-                <p> Ideal weight for a woman: <?php if(isset($_GET['height'], $_GET['weight'])){echo $idlwoman ;} ?>  </p>
-                <p> Ideal weight for a man: <?php if(isset($_GET['height'], $_GET['weight'])){echo $idlman ;} ?>  </p>
             </div> 
         </section>
     </div>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
-       
-
+    
               <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">
                 <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Adi Tavet . All rights reserved </p>
