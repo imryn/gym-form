@@ -35,15 +35,11 @@
                     // These code snippets use an open-source library. http://unirest.io/php
                     $response = Unirest\Request::post("https://bmi.p.mashape.com/",
                     array(
-                        "X-Mashape-Key" => "aejQthTAdfmshphAPr050XvBjHgvp1sT1fOjsno8wzvozPmY7Q",
+                        "X-Mashape-Key" => "kiaproject",
                         "Content-Type" => "application/json",
                         "Accept" => "application/json"
                     )
-                    "{
-                        \"weight\":{\"value\":\"85.00\",\"unit\":\"kg\"},
-                        \"height\":{\"value\":\"170.00\",\"unit\":\"cm\"},
-                        \"sex\":\"m\",\"age\":\"24\",\"waist\":\"34.00\",\"hip\":\"40.00\"
-                    }"
+                    "{\"weight\":{\"value\":\"85.00\",\"unit\":\"kg\"},\"height\":{\"value\":\"170.00\",\"unit\":\"cm\"},\"sex\":\"m\",\"age\":\"24\",\"waist\":\"34.00\",\"hip\":\"40.00\"}"
                     );
                 ?>
     </section>

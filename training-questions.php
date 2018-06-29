@@ -133,7 +133,7 @@
                         <label for="name" class="gym-label"> <span> * </span> What do you eat before training? </label>
                             <p> <input type="radio" name="food" value="fruit"> Fruit </p>
                             <p> <input type="radio" name="food" value="vegetable"> Vegetable </p>
-                            <p> <input type="radio" name="food" value="bigmeal"> big meal </p>
+                            <p> <input type="radio" name="food" value="bigmeal"> Big meal </p>
                             <p> <input type="radio" name="food" value="smallmeal"> A Small meal </p>
                             <p> <input type="radio" name="food" value="energysnack"> Energy snack </p>
                         </div>
