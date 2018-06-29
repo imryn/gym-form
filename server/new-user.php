@@ -65,9 +65,9 @@
             }
 
             else{
-
+                $password = md5($_POST['password']);
                 $values = "'{$_POST['gender']}','{$_POST['agepref']}','{$_POST['firstname']}','{$_POST['lastname']}',{$_POST['userid']},
-                '{$_POST['password']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phonenumber']}',{$_POST['height']},{$_POST['weight']}";
+                '{$password}','{$_POST['city']}','{$_POST['email']}','{$_POST['phonenumber']}',{$_POST['height']},{$_POST['weight']}";
 
                 $sql = "INSERT INTO users (gender,agepref,firstname,lastname,userid,
                 password,city,email,phonenumber,height,weight) VALUES ($values)";
@@ -88,8 +88,9 @@
 
          public function login(){
             if( isSet($_SESSION['token']) && isSet($_POST['token']) && $_SESSION['token'] == $_POST['token']){
+                $password = md5($_POST['password']);
                 $this->allowSpecialCharacters($_POST);
-                $sql = "SELECT userid FROM users WHERE userid='{$_POST['userid']}' AND password ='{$_POST['password']}'";
+                $sql = "SELECT userid FROM users WHERE userid='{$_POST['userid']}' AND password ='{$password}'";
                 $result = $this->db->query($sql);
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
