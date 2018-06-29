@@ -59,17 +59,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="describe-info"> Please answer following questions only if you work out in the gym: </p>
-                <div class="row gym-form">
-                    <div class="col span-1-of-1 box">
-                        <div class="registration-info">        
-                            <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
-                            <p> <input type="radio" name="unoraerobic_exercises" value="aerobic"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
-                            <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
-                            <p> <input type="radio" name="unoraerobic_exercises" value="both"> Both </p>
-                        </div>
-                    </div>
-                </div>
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
@@ -142,9 +131,20 @@
                 <div class="row gym-form">
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
-                        <label for="name" class="gym-label"> <span> * </span> Are you satisfied with your weight? </label>
-                        <p> <input type="radio" name="trainning_satisfied" value="yes"> Yes </p>
-                            <p> <input type="radio" name="trainning_satisfied" value="no"> No </p>
+                            <label for="name" class="gym-label"> <span> * </span> Are you satisfied with your weight? </label>
+                                <p> <input type="radio" name="trainning_satisfied" value="yes"> Yes </p>
+                                <p> <input type="radio" name="trainning_satisfied" value="no"> No </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="describe-info"> Please answer following questions only if you work out in the gym: </p>
+                <div class="row gym-form">
+                    <div class="col span-1-of-1 box">
+                        <div class="registration-info">        
+                            <label for="sportgymtypes" class="gym-label"> <span> * </span> What kind of exercises are you doing at the gym?  </label>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="aerobic"> Aerobic exercises like mountaineering, using dalygit, bear walking, adjacent and getting up.</p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="unaerobic"> Unaerobic exercises like push ups, scots, angels, crunches, weight lifting, shoulder thrust. </p>
+                            <p> <input type="radio" name="unoraerobic_exercises" value="both"> Both </p>
                         </div>
                     </div>
                 </div>
