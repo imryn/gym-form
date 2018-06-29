@@ -33,8 +33,13 @@
                  }
                  break;
 
+                 case "disabledform":
+                    $question = new Questions();
+                    $question->finalForm();
+                 break;
             }
        }
+
        else{
            echo "no find any route";
        }

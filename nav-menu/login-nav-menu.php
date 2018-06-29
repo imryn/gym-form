@@ -25,6 +25,7 @@
               </div>
             </li> -->
             <li class="links"><a href="training-questions.php"> Trainee Questionnaire </a></li>
+            <li class="links"><a href="/gym-form/server/api.php?route=disabledform"> Final Trainee Questionnaire </a></li>
             <li class="links"><a href="training-recommendation.php"> Your Recommendation Training </a></li>
             <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
       </ul>
