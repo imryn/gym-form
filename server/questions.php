@@ -42,7 +42,7 @@
         }
 
         public function finalForm(){
-            $sql = "select * from questions where userid ='".$_SESSION['userid'] ."'";
+            $sql = "SELECT * FROM questions WHERE userid ='".$_SESSION['userid'] ."'";
             $result =$this->db->query($sql);
             if($result -> num_rows >0) {
                 $row = $result->fetch_assoc();
