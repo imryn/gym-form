@@ -21,6 +21,11 @@
                     $question = new Questions();
                     $question->createQuestionsFormForUser();
                     break;
+                
+                case "update_answers_form":
+                    $question = new Questions();
+                    $question->updateQuestionsFormForUser();
+                    break;
             }
        }
        

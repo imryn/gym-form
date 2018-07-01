@@ -49,12 +49,12 @@
                     <div class="col span-1-of-1 box">
                         <div class="registration-info">
                             <label for="sporttypes" class="gym-label"> <span> * </span> 1. What kind of sport do you practice?  </label> </br>
-                            <input type="checkbox" name="bicycle" <?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle'] == "1" ? 'checked' : '' ?>> Riding a bicycle </p>
-                            <input type="checkbox" name="gymsport" <?php if( isSet($_GET['gymsport']) ) echo $_GET['gymsport'] == "1" ? 'checked' : '' ?>> Work out in the gym </p>
-                            <input type="checkbox" name="martialarts" <?php if( isSet($_GET['martialarts']) ) echo $_GET['martialarts'] == "1" ? 'checked' : '' ?>> Martial arts </p>
-                            <input type="checkbox" name="game" <?php if( isSet($_GET['game']) ) echo $_GET['game'] == "1" ? 'checked' : '' ?>> Playing football, basketball, handball etc. </p>
-                            <input type="checkbox" name="running" <?php if( isSet($_GET['running']) ) echo $_GET['running'] == "1" ? 'checked' : '' ?>> Running </p>
-                            <input type="checkbox" name="swimming" <?php if( isSet($_GET['swimming']) ) echo $_GET['swimming'] == "1" ? 'checked' : '' ?>> Swimming </p>
+                            <input type="checkbox" name="bicycle" value="1" <?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle'] == "1" ? 'checked' : '' ?>> Riding a bicycle </p>
+                            <input type="checkbox" name="gymsport" value="1" <?php if( isSet($_GET['gymsport']) ) echo $_GET['gymsport'] == "1" ? 'checked' : '' ?>> Work out in the gym </p>
+                            <input type="checkbox" name="martialarts" value="1" <?php if( isSet($_GET['martialarts']) ) echo $_GET['martialarts'] == "1" ? 'checked' : '' ?>> Martial arts </p>
+                            <input type="checkbox" name="game" value="1" <?php if( isSet($_GET['game']) ) echo $_GET['game'] == "1" ? 'checked' : '' ?>> Playing football, basketball, handball etc. </p>
+                            <input type="checkbox" name="running" value="1" <?php if( isSet($_GET['running']) ) echo $_GET['running'] == "1" ? 'checked' : '' ?>> Running </p>
+                            <input type="checkbox" name="swimming" value="1" <?php if( isSet($_GET['swimming']) ) echo $_GET['swimming'] == "1" ? 'checked' : '' ?>> Swimming </p>
 
                         </div>
                     </div>
