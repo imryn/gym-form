@@ -95,7 +95,21 @@
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['userid'] = $_POST['userid'];
-                    header("Location: /gym-form/training-questions.php"); 
+
+                    $sql = "SELECT questions.userid
+                    FROM questions
+                    WHERE questions.userid='{$_SESSION['userid']}'
+                    AND questions.questionnaire_status='0'";
+
+                    $result = $this->db->query($sql);
+
+                    if(mysqli_num_rows($result) > 0 ){
+                        header("Location: /gym-form/training-questions.php"); 
+                       }
+
+                     else{
+                        $this->sendtoNotFullform();
+                       }             
                 }
                 else{
                     header("Location: /gym-form/login_page.php");
@@ -111,6 +125,15 @@
                 return true;
             }
             return false;
+        }
+
+        public function sendtoNotFullform() {
+            $sql = "SELECT * FROM questions WHERE userid ='{$_SESSION['userid']}'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                $row = $result->fetch_assoc();
+                header("Location: /gym-form/not-full-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
+            }
         }
         
         
