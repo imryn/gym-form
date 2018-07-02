@@ -76,10 +76,7 @@
                 if($result){
                     $id = $this->db->insert_id;
                     header("Location: /gym-form/index.php?error-message=Form was saved!");
-                    //  echo json_encode((object) [
-                    //     'id' => $id,
-                    //      'success'=>true
-                    // ]);
+              
                 }
                
             } 
@@ -99,16 +96,16 @@
                     $sql = "SELECT questions.userid
                     FROM questions
                     WHERE questions.userid='{$_SESSION['userid']}'
-                    AND questions.questionnaire_status='0'";
+                    AND questions.questionnaire_status='1'";
 
                     $result = $this->db->query($sql);
 
-                    if(mysqli_num_rows($result) > 0 ){
-                        header("Location: /gym-form/training-questions.php"); 
-                       }
+                     if(mysqli_num_rows($result) > 0 ){
+                        $this->sendtoNotFullform(); 
+                     }
 
                      else{
-                        $this->sendtoNotFullform();
+                        header("Location: /gym-form/not-full-training-questions.php");
                        }             
                 }
                 else{
