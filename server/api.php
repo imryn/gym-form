@@ -42,6 +42,10 @@
                     $question = new Questions();
                     $question->finalForm();
                  break;
+
+                 case "create_table_result":
+                    $user = new Users();
+                    $user->makeResulttable(); 
             }
        }
 
