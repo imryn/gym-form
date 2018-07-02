@@ -1,34 +1,5 @@
 <!DOCTYPE html>
 <html lang="he">
-    <?php 
-
-        session_start();
-        $servername = "us-cdbr-gcp-east-01.cleardb.net";
-        $username = "b54a0834df827f";
-        $password = "ba006edc";
-        $dbname = "gcp_ac134926fbc5dc52c106";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
-
-        $sql = "select *
-                from users
-                INNER JOIN questions ON users.userid=questions.userid
-                where questions.questionnaire_status='1'
-                order by lastname 
-                ";
-        
-        
-        $result = $conn->query($sql);
-
-        $conn->close();
-    ?>
-
-
     <head>
         <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,34 +53,28 @@
                             <th> Question 9 </th>
                         </tr>
 
-                        <?php if ($result->num_rows > 0) 
-                        {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) 
-                            {?>
                                 <tr>
-                                    <td>  <?php echo $row['lastname']; ?>
-                                          <?php  echo $row['firstname']; ?> 
+                                    <td>  <?php if( isSet($_GET['lastname']) )echo $_GET['lastname']; ?>
+                                          <?php  if( isSet($_GET['firstname']) )echo $_GET['firstname']; ?> 
                                     </td> 
-                                    <td>  <?php echo $row['agepref']; ?> </td>
-                                    <td>  <?php  echo $row['gender']; ?> </td>
+                                    <td>  <?php if( isSet($_GET['agepref']) ) echo $_GET['agepref']; ?> </td>
+                                    <td>  <?php  if( isSet($_GET['gender']) ) echo $_GET['gender']; ?> </td>
                                     <td>  <?php                                     
-                                            if($row['bicycle'] == "1")
-                                                    echo 'Bicycle <br>'; 
-                                            if($row['gymsport'] == "1")
-                                                    echo 'Gym sport <br>' ;
-                                            if( $row['martialarts'] == "1")
-                                                    echo 'Martial arts <br>';
-                                            if($row['game'] == "1")
-                                                    echo 'Game <br>';
-                                            if($row['running'] == "1")
-                                                    echo 'Running <br>';
-                                            if($row['swimming'] == "1")
-                                                    echo 'Swimming';
-                                          ?> 
+                                           if( isSet($_GET['bicycle']) && $_GET['bicycle']=="1") echo 'Bicycle <br>'; 
+                                           
+                                           if( isSet($_GET['gymsport']) && $_GET['gymsport']=="1") echo 'Gym sport <br>';
+                                           
+                                           if( isSet($_GET['martialarts']) && $_GET['martialarts']=="1") echo 'Martial arts <br>';
+
+                                           if( isSet($_GET['game']) && $_GET['game']=="1") echo 'Game <br>';
+
+                                           if( isSet($_GET['running']) && $_GET['running']=="1") echo 'Running <br>';
+
+                                           if( isSet($_GET['swimming']) && $_GET['swimming']=="1") echo 'swimming <br>';
+                                           ?>
                                     </td>
-                                    <td> <?php echo $row['training_frequency']; ?> </td>
-                                    <td> <?php echo $row['training_favorite_time'];?> </td> 
+                                    <td> <?php if( isSet($_GET['training_frequency'])) echo $_GET['training_frequency']; ?> </td>
+                                    <td> <?php if( isSet($_GET['training_favorite_time'])) echo $_GET['training_favorite_time']; ?> </td> 
                                     <td> <?php 
                                             if($row['balance'] == "1")
                                                     echo 'Balance <br>';
@@ -130,10 +95,7 @@
                                     <td>  <?php echo $row['unoraerobic_exercises']; ?> </td>
  
                                 </tr>
-                            <?php    
-                            }
-                        }
-                        ?>
+   
                     </table>
                 </form>
             </section>
