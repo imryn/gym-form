@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="he">
-<<<<<<< HEAD
     <?php 
 
         session_start();
@@ -31,8 +30,6 @@
     ?>
 
 
-=======
->>>>>>> 225d328c181d37bd24f47b73453c5f95f8362b63
     <head>
         <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">

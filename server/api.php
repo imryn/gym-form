@@ -49,7 +49,9 @@
                     $user = new Users();
                     $user->makeResulttable();
                  break;
-
+                case "MeCompareOthers":
+                $user = new Users();
+                $user->MeCompareOthers();
             }
        }
 
