@@ -26,6 +26,8 @@
                     $question = new Questions();
                     $question->updateQuestionsFormForUser();
                     break;
+                
+             
             }
        }
        
@@ -45,7 +47,9 @@
 
                  case "create_table_result":
                     $user = new Users();
-                    $user->makeResulttable(); 
+                    $user->makeResulttable();
+                 break;
+
             }
        }
 

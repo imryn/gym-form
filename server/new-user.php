@@ -76,10 +76,7 @@
                 if($result){
                     $id = $this->db->insert_id;
                     header("Location: /gym-form/index.php?error-message=Form was saved!");
-                    //  echo json_encode((object) [
-                    //     'id' => $id,
-                    //      'success'=>true
-                    // ]);
+              
                 }
                
             } 
@@ -99,16 +96,16 @@
                     $sql = "SELECT questions.userid
                     FROM questions
                     WHERE questions.userid='{$_SESSION['userid']}'
-                    AND questions.questionnaire_status='0'";
+                    AND questions.questionnaire_status='1'";
 
                     $result = $this->db->query($sql);
 
-                    if(mysqli_num_rows($result) > 0 ){
-                        header("Location: /gym-form/training-questions.php"); 
-                       }
+                     if(mysqli_num_rows($result) > 0 ){
+                        $this->sendtoNotFullform(); 
+                     }
 
                      else{
-                        $this->sendtoNotFullform();
+                        header("Location: /gym-form/not-full-training-questions.php");
                        }             
                 }
                 else{
@@ -132,21 +129,21 @@
             $result =$this->db->query($sql);
             if(mysqli_num_rows($result) > 0) {
                 $row = $result->fetch_assoc();
-                header("Location: /gym-form/not-full-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
+                header("Location: /gym-form/not-full-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&swimming={$row['swimming']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
             }
         }
 
         public function makeResulttable(){
             $sql = "SELECT *
-            from users
+            FROM users
             INNER JOIN questions ON users.userid=questions.userid
-            where questions.questionnaire_status='1'
-            order by lastname";
+            WHERE questions.questionnaire_status='1'
+            ORDER BY lastname";
 
             $result =$this->db->query($sql);
             if(mysqli_num_rows($result) > 0) {
                 $row = $result->fetch_assoc();
-                header("Location: /gym-form/not-full-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
+                header("Location: /gym-form/results_table.php?firstname={$row['firstname']}&lastname={$row['lastname']}&agepref={$row['agepref']}&gender={$row['gender']}&bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&swimming={$row['swimming']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
             }
         }
         
