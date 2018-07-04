@@ -16,39 +16,66 @@
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
         <title>MeCompareOthers</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Amount', 'Num of trainers'],
+          ['1-3 times',    <?php if( isSet($_GET['1-3times']) )  echo $_GET['1-3times'] ?>],
+          ['4-7 times',      <?php if( isSet($_GET['4-7times']) ) echo $_GET['4-7times']?>],
+          ['8-11 times',  <?php if( isSet($_GET['8-11times']) ) echo $_GET['8-11times']?>],
+          ['11+',    <?php if( isSet($_GET['11plus']) ) echo $_GET['11plus']?>]
+        ]);
+
+        var options = {
+          title: 'Num of practices By month'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawVisualization);
+
       function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-         ['Month', 'My Answer', 'Avg'],
-         ['bicycle',  <?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,2.05],
-         ['Work out in the gym',<?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,2],
-         ['Martial arts',<?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,1.8],
-         ['Games',<?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,1.9],
-         ['Running',<?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,1.8],
-         ['Swimming',<?php if( isSet($_GET['bicycle']) ) echo $_GET['bicycle']?>,2]
+         ['Month', '20-26', '27-33', '34-40', '40+'],
+         ['bicycle',<?php if( isSet($_GET['bic20to26']) ){  echo $_GET['bic20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['bic27to33']) ){  echo $_GET['bic27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['bic33to40']) ){  echo $_GET['bic33to40']; } else { echo '0';} ?> ,0],
+         ['gym',  <?php if( isSet($_GET['gym20to26']) ){  echo $_GET['gym20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['gym27to33']) ){  echo $_GET['gym27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['gym33to40']) ){  echo $_GET['gym33to40']; } else { echo '0';} ?> ,0],
+         ['Martial arts',   <?php if( isSet($_GET['arts20to26']) ){  echo $_GET['arts20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['arts27to33']) ){  echo $_GET['arts27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['arts33to40']) ){  echo $_GET['arts33to40']; } else { echo '0';} ?> ,0],
+         ['Sports games',<?php if( isSet($_GET['game20to26']) ){  echo $_GET['game20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['game27to33']) ){  echo $_GET['game27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['game33to40']) ){  echo $_GET['game33to40']; } else { echo '0';} ?> ,0],
+         ['Running', <?php if( isSet($_GET['run20to26']) ){  echo $_GET['run20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['run27to33']) ){  echo $_GET['run27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['run33to40']) ){  echo $_GET['run33to40']; } else { echo '0';} ?> ,0],
+         ['Swimming',  <?php if( isSet($_GET['swi20to26']) ){  echo $_GET['swi20to26']; } else { echo '0';} ?> , <?php if( isSet($_GET['swi27to33']) ){  echo $_GET['swi27to33']; } else { echo '0';} ?> , <?php if( isSet($_GET['swi33to40']) ){  echo $_GET['swi33to40']; } else { echo '0';} ?> ,0 ]
       ]);
 
     var options = {
-      title : 'Monthly Coffee Production by Country',
-      vAxis: {title: 'Cups'},
-      hAxis: {title: 'Month'},
+      title : 'Types of training by Age range',
+      vAxis: {title: 'Num of trainers'},
+      hAxis: {title: 'Training type'},
       seriesType: 'bars',
-      series: {1: {type: 'line'}}
+      series: {4: {type: 'line'}}
     };
 
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
     chart.draw(data, options);
   }
+  </script>
     </script>
   </head>
   <body>
         <header>
            <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
     <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">

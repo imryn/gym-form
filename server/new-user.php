@@ -147,12 +147,137 @@
             }
         }
         public function MeCompareOthers(){
-            $sql="SELECT * FROM questions WHERE bicycle='0' AND questionnaire_status='1'";
+            $sql="SELECT training_frequency FROM questions WHERE training_frequency AND questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            $One2Three=0;
+            $Four2Seven=0;
+            $Eight2Eleven=0;
+            $Elevenplus=0;
+            if(mysqli_num_rows($result) > 0) {
+                While($row=$result->fetch_assoc()){
+                    if( $row['training_frequency']=='1-3 times') {
+                        $One2Three++;
+                    }
+                    if ($row['training_frequency']=='4-7 times'){ 
+                        $Four2Seven++;  
+                    }
+                    if ($row['training_frequency']=='8-11 times'){ 
+                        $Eight2Eleven++;  
+                    }
+                    if ($row['training_frequency']=='11+'){ 
+                        $Elevenplus++;  
+                    }
+                }   
+            }
+            $sql="SELECT agepref,bicycle FROM users INNER JOIN questions ON users.userid=questions.userid WHERE bicycle='1' AND questions.questionnaire_status='1'";
             $result =$this->db->query($sql);
             if(mysqli_num_rows($result) > 0) {
-                $bic = mysqli_num_rows($result);
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $bic20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $bic27to33++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $bic34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $bic40plus++;
+                    }
+                }
             }
-            header("Location: /gym-form/MeCompareOthers.php?bicycle=$bic");
+            $sql="SELECT agepref,gymsport FROM users INNER JOIN questions ON users.userid=questions.userid WHERE gymsport='1' AND questions.questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $gym20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $gym27to33++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $gym34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $gym40++;
+                    }
+                }
+            }
+            $sql="SELECT agepref,martialarts FROM users INNER JOIN questions ON users.userid=questions.userid WHERE martialarts='1' AND questions.questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) { 
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $arts20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $arts27to34++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $arts34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $arts40++;
+                    }
+                }
+            }
+            $sql="SELECT agepref,game FROM users INNER JOIN questions ON users.userid=questions.userid WHERE game='1' AND questions.questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $game20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $game27to33++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $game34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $game40++;
+                    }
+                }
+            }
+            $sql="SELECT agepref,running FROM users INNER JOIN questions ON users.userid=questions.userid WHERE running='1' AND questions.questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $run20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $run27to33++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $run34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $run40++;
+                    }
+                }
+            }
+            $sql="SELECT agepref,swimming FROM users INNER JOIN questions ON users.userid=questions.userid WHERE swimming='1' AND questions.questionnaire_status='1'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                While($row=$result->fetch_assoc()){
+                    if($row['agepref']=='20-26'){
+                    $swi20to26++;
+                    }
+                    if($row['agepref']=='27-33'){
+                    $swi27to33++;
+                    }
+                    if($row['agepref']=='34-40'){
+                    $swi34to40++;
+                    }
+                    if($row['agepref']=='40+'){
+                    $swi40++;
+                    }
+                }
+            }
+            header("Location: /gym-form/MeCompareOthers.php?1-3times=$One2Three&4-7times=$Four2Seven&8-11times=$Eight2Eleven&11plus=$Elevenplus&bic20to26=$bic20to26&bic27to33=$bic27to33&bic34to40=$bic34to40&bic40plus=$bic40plus&gym20to26=$gym20to26&gym27to33=$gym27to33&gym34to40=$gym34to40&gym40=$gym40&arts20to26=$arts20to26&arts27to33=$arts27to33&arts34to40=$arts34to40&arts40=$arts40&game20to26=$game20to26&game27to33=$game27to33&game34to40=$game34to40&game40=$game40&run20to26=$run20to26&run27to33=$run27to33&run34to40=$run34to40&run40=$run40&swi20to26=$swi20to26&swi27to33=$swi27to33&swi34to40=$swi34to40&swi40=$swi40");
         }
         
         
