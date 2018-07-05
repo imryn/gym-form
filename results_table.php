@@ -1,33 +1,14 @@
+<?php
+    include 'server/new-user.php';
+    $user = new Users();
+    if( !$user->isLogin() ) {
+        header('location:index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="he">
-    <?php 
 
-        session_start();
-        $servername = "us-cdbr-gcp-east-01.cleardb.net";
-        $username = "b54a0834df827f";
-        $password = "ba006edc";
-        $dbname = "gcp_ac134926fbc5dc52c106";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
-
-        $sql = "select *
-                from users
-                INNER JOIN questions ON users.userid=questions.userid
-                where questions.questionnaire_status='1'
-                order by lastname 
-                ";
-        
-        
-        $result = $conn->query($sql);
-
-        $conn->close();
-
-    ?>
 
 
     <head>

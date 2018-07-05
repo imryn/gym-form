@@ -10,7 +10,10 @@
                 case "create_user":
                     $user = new Users();
                     $user->createUser();
+
+                    $user->createstatus();
                     break;
+              
 
                 case "login":
                     $user = new Users();
@@ -21,8 +24,14 @@
                     $question = new Questions();
                     $question->createQuestionsFormForUser();
                     break;
+
+                case "save_answers_form":
+                    $question = new Questions();
+                    $question->createQuestionsFormForUser();
+                    break;
                 
                 case "update_answers_form":
+                    
                     $question = new Questions();
                     $question->updateQuestionsFormForUser();
                     break;
@@ -49,9 +58,11 @@
                     $user = new Users();
                     $user->makeResulttable();
                  break;
+
                 case "MeCompareOthers":
-                $user = new Users();
-                $user->MeCompareOthers();
+                    $user = new Users();
+                    $user->MeCompareOthers();
+                    break;
             }
        }
 

@@ -25,19 +25,27 @@
         public function createQuestionsFormForUser(){
             $this->allowSpecialCharacters($_POST);
 
-            $values = "'{$_SESSION['userid']}','{$_POST['gymsport']}','{$_POST['bicycle']}','{$_POST['martialarts']}','{$_POST['game']}','{$_POST['running']}',
-            '{$_POST['swimming']}','{$_POST['unoraerobic_exercises']}','{$_POST['training_frequency']}',
-            '{$_POST['training_favorite_time']}','{$_POST['balance']}','{$_POST['cardio']}','{$_POST['shaping_and_toning']}','{$_POST['weight_loss']}','{$_POST['goal']}',
-            '{$_POST['trainning_manner']}','{$_POST['trainning_cost']}','{$_POST['food']}','{$_POST['trainning_satisfied']}'";
+            // $values = "'{$_POST['gymsport']}','{$_POST['bicycle']}','{$_POST['martialarts']}','{$_POST['game']}','{$_POST['running']}',
+            // '{$_POST['swimming']}','{$_POST['unoraerobic_exercises']}','{$_POST['training_frequency']}',
+            // '{$_POST['training_favorite_time']}','{$_POST['balance']}','{$_POST['cardio']}','{$_POST['shaping_and_toning']}','{$_POST['weight_loss']}','{$_POST['goal']}',
+            // '{$_POST['trainning_manner']}','{$_POST['trainning_cost']}','{$_POST['food']}','{$_POST['trainning_satisfied']}'";
 
-            $sql = "INSERT INTO questions (userid,gymsport,bicycle,martialarts,game,running,swimming,unoraerobic_exercises,
-            training_frequency,training_favorite_time,balance,cardio,
-            shaping_and_toning,weight_loss,goal,trainning_manner,trainning_cost,food,trainning_satisfied) VALUES ($values)";
+            // $sql = "INSERT INTO questions (gymsport,bicycle,martialarts,game,running,swimming,unoraerobic_exercises,
+            // training_frequency,training_favorite_time,balance,cardio,
+            // shaping_and_toning,weight_loss,goal,trainning_manner,trainning_cost,food,trainning_satisfied) VALUES ($values) WHERE questions.userid='{$_SESSION['userid']}'";
         
+            $sql = "UPDATE questions SET gymsport='{$_POST['gymsport']}',bicycle='{$_POST['bicycle']}', martialarts='{$_POST['martialarts']}',
+            game='{$_POST['game']}', running='{$_POST['running']}', swimming='{$_POST['swimming']}',unoraerobic_exercises='{$_POST['unoraerobic_exercises']}',training_frequency='{$_POST['training_frequency']}',
+            training_favorite_time='{$_POST['training_favorite_time']}',balance='{$_POST['balance']}',cardio='{$_POST['cardio']}',shaping_and_toning='{$_POST['shaping_and_toning']}',
+            weight_loss='{$_POST['weight_loss']}',goal='{$_POST['goal']}', trainning_manner='{$_POST['trainning_manner']}',trainning_cost='{$_POST['trainning_cost']}',
+            food='{$_POST['food']}',trainning_satisfied='{$_POST['trainning_satisfied']}'
+            WHERE questions.userid='{$_SESSION['userid']}'";
+
             $result =$this->db->query($sql);
             if($result){
                 $id = $this->db->insert_id;
-                header("Location: /gym-form/training-questions.php?error-message=The form was saved!");
+                $this->finalForm();
+                // header("Location: /gym-form/training-questions.php?error-message=The form was saved!");
             }
         }
 

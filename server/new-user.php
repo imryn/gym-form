@@ -68,6 +68,7 @@
                 $password = md5($_POST['password']);
                 $values = "'{$_POST['gender']}','{$_POST['agepref']}','{$_POST['firstname']}','{$_POST['lastname']}',{$_POST['userid']},
                 '{$password}','{$_POST['city']}','{$_POST['email']}','{$_POST['phonenumber']}',{$_POST['height']},{$_POST['weight']}";
+                
 
                 $sql = "INSERT INTO users (gender,agepref,firstname,lastname,userid,
                 password,city,email,phonenumber,height,weight) VALUES ($values)";
@@ -101,11 +102,11 @@
                     $result = $this->db->query($sql);
 
                      if(mysqli_num_rows($result) > 0 ){
-                        $this->sendtoNotFullform(); 
+                        header("Location: /gym-form/disabled-training-questions.php");
                      }
 
                      else{
-                        header("Location: /gym-form/not-full-training-questions.php");
+                        $this->sendtoNotFullform();
                        }             
                 }
                 else{
@@ -122,6 +123,14 @@
                 return true;
             }
             return false;
+        }
+
+        public function createstatus(){
+            $_SESSION['questionnaire_status'] ='0';
+
+            $sql = "INSERT INTO questions (questionnaire_status ,userid) VALUES('0','{$_POST['userid']}')";
+
+            $result =$this->db->query($sql);
         }
 
         public function sendtoNotFullform() {

@@ -148,8 +148,12 @@
                         </div>
                     </div>
                 </div>
-            <input type="hidden" name="route" value="update_answers_form">       
-            <button type="submit" class="save-1 btn btn-primary"> Save</button>   
+            <input type="hidden" name="route" value="update_answers_form">
+            <input type="hidden" name="route" value="save_answers_form">       
+       
+            <button type="submit" class="save-1 btn btn-primary"> Save</button>
+            <button type="submit" class="save-1 btn btn-primary"> Update </button>   
+   
         </form> 
     </section>
 </div>  
