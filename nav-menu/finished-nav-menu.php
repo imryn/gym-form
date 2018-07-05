@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
             <li class="links"><a href="/gym-form/server/api.php?route=disabledform"> Final Trainee Questionnaire </a></li>
             <li class="links"><a href="training-recommendation.php"> Your Recommendation Training </a></li>
-            <!-- <li class="links"><a href="/gym-form/server/api.php?route=create_table_result"> Results Table </a></li> -->
+            <li class="links"><a href="/gym-form/server/api.php?route=create_table_result"> Results Table </a></li>
             <li class="links"><a href="/gym-form/server/api.php?route=MeCompareOthers"> MeCompareOthers </a></li>
             <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
       </ul>
