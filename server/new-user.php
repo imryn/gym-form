@@ -5,9 +5,11 @@
 
     class Users{
 
+
         function __construct() {
             $db =  DB::getInstance();
             $this->db = $db->getConnection();
+            // $this->_questions = new Questions();
         }
 
         private function allowSpecialCharacters($method){
@@ -15,6 +17,8 @@
                      $method[$key] = strip_tags($this->db->real_escape_string($value));
             }
         }
+
+
 
         private function error(){
             echo json_encode((object) [
@@ -102,7 +106,7 @@
                     $result = $this->db->query($sql);
 
                      if(mysqli_num_rows($result) > 0 ){
-                        header("Location: /gym-form/disabled-training-questions.php");
+                        $this->finalForm();
                      }
 
                      else{
@@ -139,6 +143,15 @@
             if(mysqli_num_rows($result) > 0) {
                 $row = $result->fetch_assoc();
                 header("Location: /gym-form/not-full-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&swimming={$row['swimming']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
+            }
+        }
+
+        public function finalForm(){
+            $sql = "SELECT * FROM questions WHERE userid ='".$_SESSION['userid'] ."'";
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) >0) {
+                $row = $result->fetch_assoc();
+                header("Location: /gym-form/disabled-training-questions.php?bicycle={$row['bicycle']}&gymsport={$row['gymsport']}&martialarts={$row['martialarts']}&game={$row['game']}&running={$row['running']}&swimming={$row['swimming']}&training_frequency={$row['training_frequency']}&training_favorite_time={$row['training_favorite_time']}&balance={$row['balance']}&cardio={$row['cardio']}&shaping_and_toning={$row['shaping_and_toning']}&weight_loss={$row['weight_loss']}&goal={$row['goal']}&trainning_manner={$row['trainning_manner']}&trainning_cost={$row['trainning_cost']}&food={$row['food']}&trainning_satisfied={$row['trainning_satisfied']}&unoraerobic_exercises={$row['unoraerobic_exercises']}");
             }
         }
 

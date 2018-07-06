@@ -30,11 +30,11 @@
                     $question->createQuestionsFormForUser();
                     break;
                 
-                case "update_answers_form":
+                // case "update_answers_form":
                     
-                    $question = new Questions();
-                    $question->updateQuestionsFormForUser();
-                    break;
+                //     $question = new Questions();
+                //     $question->updateQuestionsFormForUser();
+                //     break;
                 
              
             }
