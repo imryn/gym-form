@@ -66,7 +66,7 @@
                             <p> <input type="radio" name="training_frequency" value="1-3 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "1-3 times" ? 'checked' : '' ?>> 1-3 times </p>
                             <p> <input type="radio" name="training_frequency" value="4-7 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "4-7 times" ? 'checked' : '' ?>> 4-7 times </p>
                             <p> <input type="radio" name="training_frequency" value="8-11 times" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "8-11 times" ? 'checked' : '' ?>> 8-11 times </p>
-                            <p> <input type="radio" name="training_frequency" value="11+" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "11+" ? 'checked' : '' ?> disabled> 11+ </p>
+                            <p> <input type="radio" name="training_frequency" value="11+" <?php if( isSet($_GET['training_frequency']) ) echo $_GET['training_frequency'] == "11+" ? 'checked' : '' ?> > 11+ </p>
                         </div>
                     </div>
                 </div>

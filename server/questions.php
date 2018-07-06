@@ -38,8 +38,10 @@
             game='{$_POST['game']}', running='{$_POST['running']}', swimming='{$_POST['swimming']}',unoraerobic_exercises='{$_POST['unoraerobic_exercises']}',training_frequency='{$_POST['training_frequency']}',
             training_favorite_time='{$_POST['training_favorite_time']}',balance='{$_POST['balance']}',cardio='{$_POST['cardio']}',shaping_and_toning='{$_POST['shaping_and_toning']}',
             weight_loss='{$_POST['weight_loss']}',goal='{$_POST['goal']}', trainning_manner='{$_POST['trainning_manner']}',trainning_cost='{$_POST['trainning_cost']}',
-            food='{$_POST['food']}',trainning_satisfied='{$_POST['trainning_satisfied']}'
+            food='{$_POST['food']}',trainning_satisfied='{$_POST['trainning_satisfied']}', questionnaire_status='1'
             WHERE questions.userid='{$_SESSION['userid']}'";
+
+            $_SESSION['questionnaire_status'] ='1';
 
             $result =$this->db->query($sql);
             if($result){
