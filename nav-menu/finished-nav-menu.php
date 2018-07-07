@@ -14,8 +14,8 @@
       <ul class="nav navbar-nav">
             <li class="links"><a href="/gym-form/server/api.php?route=disabledform"> Final Trainee Questionnaire </a></li>
             <li class="links"><a href="training-recommendation.php"> BMI Calculator </a></li>
-            <li class="links"><a href="/gym-form/results_table.php"> Results Table </a></li>
             <li class="links"><a href="/gym-form/server/api.php?route=MeCompareOthers"> Me Compare Others </a></li>
+            <li class="links"><a href="/gym-form/results_table.php"> Results </a></li>
             <li class="links"><a href="/gym-form/server/api.php?route=signout"> Sign Out </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
