@@ -1,3 +1,11 @@
+<?php
+    include 'server/new-user.php';
+    $user = new Users();
+    if( !$user->isLogin() ) {
+        header('location:index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="he">
     <head>
@@ -31,18 +39,25 @@
 
             <h1> Recommendations For Trainee </h1>
 
-            <div>
-                <form  method="GET" id="bmi" action="<?php ($_SERVER["PHP_SELF"]);?>">
-                    <u> <b> BMI Calculator <b> </u> <br> <br>
-                    <label for="height"> Height: </label>
-                    <input type="text" id="height" name="height">
-                    <label for="weight"> Weight: </label>
-                    <input type="text" id="weight" name="weight">
-                    <br>
-
+           <form  method="GET" id="bmi" action="<?php ($_SERVER["PHP_SELF"]);?>">
+                <div class="row gym-form">
+                    <div class="col span-1-of-2 box">
+                        <div class="registration-info">
+                            <label for="height"> Height:  </label> <br>
+                                    <input type="text" id="height" name="height">
+                        </div>
+                    </div>
+                </div>
+             <div class="row gym-form">
+                    <div class="col span-1-of-2 box">
+                        <div class="registration-info">
+                            <label for="weight"> Weight:  </label> <br>
+                                    <input type="text" id="weight" name="weight">
+                        </div>
+                    </div>
+                </div>
                     <input type="submit" value="Calc" class="save-1 btn btn-primary">
-                </form>
-            </div>
+       </form>
 
             <?php
                 require_once 'Src/Unirest.php';
@@ -57,7 +72,7 @@
                 }
             ?>
 
-            <div style="margin: 0 auto; text-align:left; color: black;">
+            <div style="margin: 2% 0 0 6.5%; text-align:left; color: black;">
                 <p> Your BMI is: <?php if(isset($_GET['height'], $_GET['weight'])){echo(round($result));} ?> </p>
                 <p> Status: <?php if(isset($_GET['height'], $_GET['weight'])){echo $status ;} ?> </p>
             </div> 

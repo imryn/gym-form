@@ -1,3 +1,10 @@
+<?php
+    include 'server/new-user.php';
+    $user = new Users();
+    if( !$user->isLogin() ) {
+        header('location:index.php');
+    }
+?>
 <!DOCTYPE html>
     <html>
     <head> 
