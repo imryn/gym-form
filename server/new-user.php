@@ -160,7 +160,7 @@
             $sql = "SELECT *
             FROM users
             INNER JOIN questions ON users.userid=questions.userid
-            WHERE questions.questionnaire_status='1'
+            WHERE questions.questionnaire_status='1' 
             ORDER BY lastname";
 
             $result =$this->db->query($sql);
@@ -171,6 +171,21 @@
                 return $rows;
             }
         }
+
+        public function recommendationForUser(){
+            $sql = "SELECT *
+            FROM users
+            INNER JOIN questions ON users.userid=questions.userid
+            WHERE questions.questionnaire_status='1' AND users.userid='{$_SESSION['userid']}'
+            ORDER BY lastname";
+
+            $result =$this->db->query($sql);
+            if(mysqli_num_rows($result) > 0) {
+                $row = $result->fetch_assoc();
+                echo json_encode($row);
+            }
+        }
+
         public function MeCompareOthers(){
             $sql="SELECT training_frequency FROM questions WHERE training_frequency AND questionnaire_status='1'";
             $result =$this->db->query($sql);

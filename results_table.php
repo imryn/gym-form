@@ -131,13 +131,40 @@
             
     <script>
         $("#morButton").click(function(){
-            var params = location.href.toString().split('?')[1]
-            $.ajax({
-            url: "/gym-form/ajaxalgoritem.php?" +params,
-            context: document.body,
-            type:'text',
-            }).done(function(text) {
-                $("#morText").html(text)
+            $.get("/gym-form/server/api.php?route=user_recommendation",function(response) {
+                if(response){
+                    var data = JSON.parse(response);
+                    var text = "";
+
+                    if((data['balance'] && data['balance']=="1") || (data['goal'] && data['goal']=="1")) { 
+                        text = text + 'Pilates and yoga will be very good for you. <br>'; 
+                    }   
+
+                    if((data['cardio'] && data['cardio']=="1") || (data['goal'] && data['goal']=="1"))
+                    {
+                        text = text + 'Pool training will be great, at least 3 times a week.<br>'; 
+                    }
+            
+                    if(data['agepref'] && data['agepref']=="20-26"  && data['shaping_and_toning'] && data['shaping_and_toning']=="1")
+                    {
+                        text = text + 'Training at the gym and cycling 4 times a week are best for your goal. <br>'; 
+                    }
+                    if(data['agepref'] && data['agepref']=="27-33"  &&  data['shaping_and_toning'] && data['shaping_and_toning']=="1")
+                    {
+                        text = text + 'Training at the gym and cycling 4 times a week are best for your goal. <br>'; 
+                    }
+                    if(data['agepref'] && data['agepref']=="34-40"  &&  data['shaping_and_toning'] && data['shaping_and_toning']=="1")
+                    {
+                        text = text + 'Training at the gym and cycling 3 times a week are best for your goal. <br>'; 
+                    }
+                    if(data['agepref'] && data['agepref']=="40+"  &&  data['shaping_and_toning'] && data['shaping_and_toning']=="1")
+                    {
+                        text = text + 'Training at the gym and cycling 2 times a week are best for your goal. <br>'; 
+                    }
+                
+                    $("#morText").html(text); 
+                }
+                
             });
         })
     </script>

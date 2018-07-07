@@ -54,10 +54,10 @@
                     $question->finalForm();
                  break;
 
-                //  case "create_table_result":
-                //     $user = new Users();
-                //     $user->makeResulttable();
-                //  break;
+                 case "user_recommendation":
+                    $user = new Users();
+                    $user->recommendationForUser();
+                 break;
 
                 case "MeCompareOthers":
                     $user = new Users();
