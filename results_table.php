@@ -4,6 +4,8 @@
     if( !$user->isLogin() ) {
         header('location:index.php');
     }
+
+    $data = $user->makeResulttable();
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +57,6 @@
                         </p>
                     </form>
                 </div>
-
-                <form>
                     <table style="font-size:14px;" class="table table-striped">
                         <tr>
                             <th> Trainee Name </th>  
@@ -72,50 +72,53 @@
                             <th> Question 8 </th>
                             <th> Question 9 </th>
                         </tr>
+                         
+                        <?php
+                        
+                            $string = "";
+                            if($data && count($data) > 0){
+                                foreach ($data as $row){
 
-                        <tr>
-                            <td>  <?php if( isSet($_GET['lastname']) )echo $_GET['lastname']; ?>
-                                    <?php  if( isSet($_GET['firstname']) )echo $_GET['firstname']; ?> 
-                            </td> 
-                            <td>  <?php if( isSet($_GET['agepref']) ) echo $_GET['agepref']; ?> </td>
-                            <td>  <?php  if( isSet($_GET['gender']) ) echo $_GET['gender']; ?> </td>
-                            <td>  <?php                                     
-                                    if( isSet($_GET['bicycle']) && $_GET['bicycle']=="1") echo 'Bicycle <br>'; 
-                                    
-                                    if( isSet($_GET['gymsport']) && $_GET['gymsport']=="1") echo 'Gym sport <br>';
-                                    
-                                    if( isSet($_GET['martialarts']) && $_GET['martialarts']=="1") echo 'Martial arts <br>';
+                                    $bicycle = $row['bicycle'] == '1' ? 'Bicycle <br>' : '';
+                                    $gymsport = $row['gymsport'] == '1' ? 'Gym sport <br>' : '';
+                                    $martialarts = $row['martialarts'] == '1' ? 'Martial arts <br>' : '';
+                                    $game = $row['game'] == '1' ? 'Game <br>' : '';
+                                    $running = $row['running'] == '1' ? 'Running <br>' : '';
+                                    $swimming = $row['swimming'] == '1' ? 'Swimming <br>' : '';
 
-                                    if( isSet($_GET['game']) && $_GET['game']=="1") echo 'Game <br>';
+                                    $exerciseType = $bicycle . $gymsport .$martialarts. $game . $running.  $swimming;
 
-                                    if( isSet($_GET['running']) && $_GET['running']=="1") echo 'Running <br>';
+                                    $balance = $row['balance'] == '1' ? 'Balance <br>' : '';
+                                    $cardio = $row['cardio'] == '1' ? 'Cardio <br>' : '';
+                                    $shaping_and_toning = $row['shaping_and_toning'] == '1' ? 'Shaping and toning <br>' : '';
+                                    $weight_loss = $row['weight_loss'] == '1' ? 'Weight loss <br>' : '';
+                                    $all = $row['goal'] == '1' ? 'All <br>' : '';
 
-                                    if( isSet($_GET['swimming']) && $_GET['swimming']=="1") echo 'swimming <br>';
-                                    ?>
-                            </td>
-                            <td> <?php if( isSet($_GET['training_frequency'])) echo $_GET['training_frequency']; ?> </td>
-                            <td> <?php if( isSet($_GET['training_favorite_time'])) echo $_GET['training_favorite_time']; ?> </td> 
-                            <td> <?php
-                                    if( isSet($_GET['balance']) && $_GET['balance']=="1") echo 'Balance <br>';
+                                    $workoutReason = $balance . $cardio .$shaping_and_toning. $weight_loss . $all;
+                                    $string = $string .'<tr>';
+                                    $string = $string .    '<td>'.$row['lastname'] .' '.$row['firstname'].'</td>';
+                                    $string = $string .    '<td>'.$row['agepref'] .'</td>';
+                                    $string = $string .    '<td>'.$row['gender'] .'</td>';
+                                    $string = $string .    '<td>'.$exerciseType.'</td>';
+                                    $string = $string .    '<td>'.$row['training_frequency'].'</td>';
+                                    $string = $string .    '<td>'.$row['training_favorite_time'].'</td>';
+                                    $string = $string .    '<td>'.$workoutReason.'</td>';
+                                    $string = $string .    '<td>'.$row['trainning_manner'].'</td>';
+                                    $string = $string .    '<td>'.$row['trainning_cost'].'</td>';
+                                   
+                                    $string = $string .    '<td>'.$row['food'].'</td>';
+                                    $string = $string .    '<td>'.$row['trainning_satisfied'].'</td>';
+                                    $string = $string .    '<td>'.$row['unoraerobic_exercises'].'</td>';
+                                    $string = $string . '</tr>';
 
-                                    if( isSet($_GET['cardio']) && $_GET['cardio']=="1") echo 'cardio <br>';
-                                    
-                                    if( isSet($_GET['shaping_and_toning']) && $_GET['shaping_and_toning']=="1") echo 'Shaping and toning <br>';
+                                }
+                                echo $string;
+                            }
+                          ?>
+                       
 
-                                    if( isSet($_GET['weight_loss']) && $_GET['weight_loss']=="1") echo 'Weight loss <br>';
-
-                                    if( isSet($_GET['goal']) && $_GET['goal']=="1") echo 'All <br>';
-                    
-                                    ?> 
-                            </td>
-                            <td>  <?php if(isSet($_GET['trainning_manner'])) echo $_GET['trainning_manner']; ?> </td>
-                            <td>  <?php if(isSet($_GET['trainning_cost'])) echo $_GET['trainning_cost'];  ?>  </td>
-                            <td>  <?php if(isSet($_GET['food'])) echo $_GET['food']; ?> </td>
-                            <td>  <?php if(isSet($_GET['trainning_satisfied'])) echo $_GET['trainning_satisfied']; ?> </td>
-                            <td>  <?php if(isSet($_GET['unoraerobic_exercises'])) echo $_GET['unoraerobic_exercises']; ?> </td>
-                        </tr>
                     </table>
-                </form>
+               
             </section>
         </div>
 
