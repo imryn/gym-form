@@ -7,10 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="he">
-
-
-
+<html>
     <head>
         <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,12 +24,8 @@
                     crossorigin="anonymous"></script>
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
-                <script src="https://code.highcharts.com/highcharts.js"></script>
-                <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
                 
-        <title> Results Table</title>
+        <title> Results</title>
     </head>
 
     <body>
@@ -42,15 +35,15 @@
 
         <div class="container">
             <section id="gym-questions">
-                <h1> Results Table </h1>
+                <h1> Results </h1>
                 <div class="error">
                         <?php 
-                        if( isSet($_GET['error-message']) ){
-                            echo $_GET['error-message'];
-                        }
+                            if( isSet($_GET['error-message']) ){
+                                echo $_GET['error-message'];
+                            }
                         ?>
                 </div>
-
+                        
                 <form>
                     <table style="font-size:14px;" class="table table-striped">
                         <tr>
@@ -68,131 +61,58 @@
                             <th> Question 9 </th>
                         </tr>
 
-                                <tr>
-                                    <td>  <?php if( isSet($_GET['lastname']) )echo $_GET['lastname']; ?>
-                                          <?php  if( isSet($_GET['firstname']) )echo $_GET['firstname']; ?> 
-                                    </td> 
-                                    <td>  <?php if( isSet($_GET['agepref']) ) echo $_GET['agepref']; ?> </td>
-                                    <td>  <?php  if( isSet($_GET['gender']) ) echo $_GET['gender']; ?> </td>
-                                    <td>  <?php                                     
-                                           if( isSet($_GET['bicycle']) && $_GET['bicycle']=="1") echo 'Bicycle <br>'; 
-                                           
-                                           if( isSet($_GET['gymsport']) && $_GET['gymsport']=="1") echo 'Gym sport <br>';
-                                           
-                                           if( isSet($_GET['martialarts']) && $_GET['martialarts']=="1") echo 'Martial arts <br>';
+                        <tr>
+                            <td>  <?php if( isSet($_GET['lastname']) )echo $_GET['lastname']; ?>
+                                    <?php  if( isSet($_GET['firstname']) )echo $_GET['firstname']; ?> 
+                            </td> 
+                            <td>  <?php if( isSet($_GET['agepref']) ) echo $_GET['agepref']; ?> </td>
+                            <td>  <?php  if( isSet($_GET['gender']) ) echo $_GET['gender']; ?> </td>
+                            <td>  <?php                                     
+                                    if( isSet($_GET['bicycle']) && $_GET['bicycle']=="1") echo 'Bicycle <br>'; 
+                                    
+                                    if( isSet($_GET['gymsport']) && $_GET['gymsport']=="1") echo 'Gym sport <br>';
+                                    
+                                    if( isSet($_GET['martialarts']) && $_GET['martialarts']=="1") echo 'Martial arts <br>';
 
-                                           if( isSet($_GET['game']) && $_GET['game']=="1") echo 'Game <br>';
+                                    if( isSet($_GET['game']) && $_GET['game']=="1") echo 'Game <br>';
 
-                                           if( isSet($_GET['running']) && $_GET['running']=="1") echo 'Running <br>';
+                                    if( isSet($_GET['running']) && $_GET['running']=="1") echo 'Running <br>';
 
-                                           if( isSet($_GET['swimming']) && $_GET['swimming']=="1") echo 'swimming <br>';
-                                           ?>
-                                    </td>
-                                    <td> <?php if( isSet($_GET['training_frequency'])) echo $_GET['training_frequency']; ?> </td>
-                                    <td> <?php if( isSet($_GET['training_favorite_time'])) echo $_GET['training_favorite_time']; ?> </td> 
-                                    <td> <?php
-                                            if( isSet($_GET['balance']) && $_GET['balance']=="1") echo 'Balance <br>';
+                                    if( isSet($_GET['swimming']) && $_GET['swimming']=="1") echo 'swimming <br>';
+                                    ?>
+                            </td>
+                            <td> <?php if( isSet($_GET['training_frequency'])) echo $_GET['training_frequency']; ?> </td>
+                            <td> <?php if( isSet($_GET['training_favorite_time'])) echo $_GET['training_favorite_time']; ?> </td> 
+                            <td> <?php
+                                    if( isSet($_GET['balance']) && $_GET['balance']=="1") echo 'Balance <br>';
 
-                                            if( isSet($_GET['cardio']) && $_GET['cardio']=="1") echo 'cardio <br>';
-                                           
-                                            if( isSet($_GET['shaping_and_toning']) && $_GET['shaping_and_toning']=="1") echo 'Shaping and toning <br>';
+                                    if( isSet($_GET['cardio']) && $_GET['cardio']=="1") echo 'cardio <br>';
+                                    
+                                    if( isSet($_GET['shaping_and_toning']) && $_GET['shaping_and_toning']=="1") echo 'Shaping and toning <br>';
 
-                                            if( isSet($_GET['weight_loss']) && $_GET['weight_loss']=="1") echo 'Weight loss <br>';
+                                    if( isSet($_GET['weight_loss']) && $_GET['weight_loss']=="1") echo 'Weight loss <br>';
 
-                                            if( isSet($_GET['goal']) && $_GET['goal']=="1") echo 'All <br>';
-                          
-                                          ?> 
-                                    </td>
-                                    <td>  <?php if(isSet($_GET['trainning_manner'])) echo $_GET['trainning_manner']; ?> </td>
-                                    <td>  <?php if(isSet($_GET['trainning_cost'])) echo $_GET['trainning_cost'];  ?>  </td>
-                                    <td>  <?php if(isSet($_GET['food'])) echo $_GET['food']; ?> </td>
-                                    <td>  <?php if(isSet($_GET['trainning_satisfied'])) echo $_GET['trainning_satisfied']; ?> </td>
-                                    <td>  <?php if(isSet($_GET['unoraerobic_exercises'])) echo $_GET['unoraerobic_exercises']; ?> </td>
- 
-                                </tr>
-   
+                                    if( isSet($_GET['goal']) && $_GET['goal']=="1") echo 'All <br>';
+                    
+                                    ?> 
+                            </td>
+                            <td>  <?php if(isSet($_GET['trainning_manner'])) echo $_GET['trainning_manner']; ?> </td>
+                            <td>  <?php if(isSet($_GET['trainning_cost'])) echo $_GET['trainning_cost'];  ?>  </td>
+                            <td>  <?php if(isSet($_GET['food'])) echo $_GET['food']; ?> </td>
+                            <td>  <?php if(isSet($_GET['trainning_satisfied'])) echo $_GET['trainning_satisfied']; ?> </td>
+                            <td>  <?php if(isSet($_GET['unoraerobic_exercises'])) echo $_GET['unoraerobic_exercises']; ?> </td>
+                        </tr>
                     </table>
                 </form>
             </section>
-
-            <div id="containerChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto;">
-            </div>
         </div>
- 
 
-        
+       
         <footer class="container-fluid text-center bg-lightblue">
                 <div class="copyrights">
                 <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Adi Tavet. All rights reserved </p>
                 </div>
-        </footer> 
-
-                <script>          
-            Highcharts.chart('containerChart', {
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Kind of sport '
-            },
-            subtitle: {
-                text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
-            },
-            xAxis: {
-                categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-                title: {
-                    text: null
-                }
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Population (millions)',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-            tooltip: {
-                valueSuffix: ' millions'
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -40,
-                y: 80,
-                floating: true,
-                borderWidth: 1,
-                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-                shadow: true
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                name: 'Year 1800',
-                data: [107, 31, 635, 203, 2]
-            }, {
-                name: 'Year 1900',
-                data: [133, 156, 947, 408, 6]
-            }, {
-                name: 'Year 2000',
-                data: [814, 841, 3714, 727, 31]
-            }, {
-                name: 'Year 2016',
-                data: [1216, 1001, 4436, 738, 40]
-            }]
-            });
-        </script>  
+        </footer>      
             
     </body>
 
