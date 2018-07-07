@@ -30,6 +30,7 @@
         <section id="gym-recommendation">
 
             <h1> Recommendations For Trainee </h1>
+
             <div>
                 <form  method="GET" id="bmi" action="<?php ($_SERVER["PHP_SELF"]);?>">
                     <u> <b> BMI Calculator <b> </u> <br> <br>

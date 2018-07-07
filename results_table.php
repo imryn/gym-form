@@ -43,7 +43,19 @@
                             }
                         ?>
                 </div>
-                        
+
+                <div>
+                    <form>
+                        Let us offer you the best practice for you (according to your age range and goal): <br>
+              
+                        <input type="button" id='morButton' value="Click to know" class="save-1 btn btn-primary">
+                        <div id="morText"></div>
+                        <p>
+
+                        </p>
+                    </form>
+                </div>
+
                 <form>
                     <table style="font-size:14px;" class="table table-striped">
                         <tr>
@@ -114,6 +126,18 @@
                 </div>
         </footer>      
             
+    <script>
+        $("#morButton").click(function(){
+            var params = location.href.toString().split('?')[1]
+            $.ajax({
+            url: "/gym-form/ajaxalgoritem.php?" +params,
+            context: document.body,
+            type:'text',
+            }).done(function(text) {
+                $("#morText").html(text)
+            });
+        })
+    </script>
     </body>
 
 </html>
